@@ -741,6 +741,144 @@
   .lab-bottombar { display:flex; flex-wrap:wrap; gap:2px; padding:5px 8px; background:#eef2f6; border-top:1px solid #b9c6d4; }
   .lab-bottombtn { display:flex; align-items:center; gap:4px; font-size:11px; font-weight:600; color:#16324f; padding:4px 8px; cursor:pointer; border-radius:2px; }
   .lab-bottombtn:hover { background:#dcebf8; }
+
+  /* ================= DIABETIC CHART MODAL ================= */
+  .diab-modal {
+    display: none;
+    position: absolute;
+    top: 10px; left: 30px;
+    width: 580px; max-width: 92%;
+    background: #eef2f6;
+    border: 1px solid #5c6b8a;
+    box-shadow: 4px 6px 18px rgba(0,0,0,0.45);
+    z-index: 400;
+    font-size: 12px;
+  }
+  .diab-modal.open { display: block; }
+  .diab-titlebar {
+    display:flex; align-items:center; justify-content:space-between;
+    background: linear-gradient(to bottom, #fdfefe, #dfe8f0);
+    border-bottom: 1px solid #b9c6d4; padding: 4px 8px;
+  }
+  .diab-titlebar-left { display:flex; align-items:center; gap:6px; color:#1f3a63; font-weight:bold; font-size:13px; }
+  .diab-titlebar-left .icon { width:14px; height:14px; background: linear-gradient(135deg,#3b6ea5,#183a63); border-radius:3px; display:inline-block; }
+  .diab-closeicon { font-size:15px; color:#333; cursor:pointer; padding:2px 8px; }
+  .diab-closeicon:hover { color:#fff; background:#c0392b; }
+
+  .diab-patientbar { display:flex; align-items:center; justify-content:space-between; padding:6px 10px; border-bottom:1px solid #b9c6d4; }
+  .diab-pname { color:#c0752b; font-weight:bold; font-size:13px; }
+  .diab-actions { display:flex; gap:4px; }
+  .diab-abtn { display:flex; align-items:center; gap:4px; font-size:11px; font-weight:600; color:#16324f; padding:3px 8px; cursor:pointer; border:1px solid #a9b7c4; background: linear-gradient(to bottom,#fefefe,#dbe4ec); border-radius:2px; }
+  .diab-abtn:hover { background:#cfe2f0; }
+
+  .diab-dayrow { display:flex; align-items:center; gap:8px; padding:6px 10px; font-size:12px; }
+  .diab-dayrow .lbl { font-weight:bold; color:#222; }
+  .diab-dayrow select { font-size:12px; padding:2px 4px; }
+
+  .diab-panel-hdr { font-weight:bold; font-size:12.5px; color:#222; padding:4px 10px 0 10px; }
+  .diab-table-wrap { padding: 2px 10px 0 10px; }
+  .diab-table-header { display:flex; background:linear-gradient(to bottom,#b9b0dd,#9a8fce); font-weight:bold; font-size:11px; color:#1c1440; position:relative; }
+  .diab-table-header .cell { padding:3px 6px; border-right:1px solid #9083c0; }
+  .diab-table-header .closex { position:absolute; right:2px; top:1px; font-size:11px; color:#1c1440; cursor:pointer; }
+  .diab-table-body { max-height: 110px; overflow-y:auto; border:1px solid #9083c0; border-top:none; }
+  .diab-row { display:flex; border-bottom:1px dotted #d9d4ee; font-size:11.5px; }
+  .diab-row .cell { padding:2px 6px; border-right:1px solid #eef2f6; display:flex; align-items:center; }
+  .diab-row .cell.selected { background:#2c66a8; color:#fff; }
+  .diab-row .cell input[type=text] { width:100%; font-size:11.5px; border:none; background:transparent; font-family:inherit; padding:0; }
+  .diab-row .cell input[type=text]:focus { outline:1px solid #8fb4d6; background:#fff; }
+  .diab-row .cell select { width:100%; font-size:11px; padding:1px 2px; }
+
+  .diab-chart-btn-row { display:flex; justify-content:flex-end; padding: 6px 10px; }
+  .diab-chart-btn-row button { font-size:12px; font-weight:bold; padding:4px 14px; border:1px solid #8a94a8; background:linear-gradient(to bottom,#f6f7fa,#dde3ea); cursor:pointer; }
+  .diab-chart-btn-row button:hover { background:#cfe2f0; }
+
+  /* ================= NURSING PROCEDURES VIEW ================= */
+  .pf-nursingproc-view.active-view { display: block; }
+  .np-filter-box { border:1px solid #6c4aa8; margin:8px; padding:6px 10px; }
+  .np-filter-title { font-weight:bold; font-size:12.5px; color:#222; margin-bottom:4px; }
+  .np-filter-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-size:12px; }
+  .np-filter-row label { display:flex; align-items:center; gap:3px; white-space:nowrap; }
+  .np-filter-row input[type=text] { font-size:12px; padding:2px 4px; width:110px; }
+  .np-query-btn { font-size:12px; padding:4px 16px; border:1px solid #a9b7c4; background:linear-gradient(to bottom,#fefefe,#dbe4ec); cursor:pointer; }
+  .np-query-btn:hover { background:#cfe2f0; }
+
+  .np-tabs { display:flex; margin: 0 8px; }
+  .np-tab { padding:5px 14px; font-size:12px; font-weight:600; color:#1f3a63; background:#e4e9ee; border:1px solid #b9c6d4; border-bottom:none; cursor:pointer; margin-right:2px; }
+  .np-tab.active { background:#fff; font-weight:bold; }
+  .np-tab:hover { background:#dcebf8; }
+
+  .np-section-title { font-weight:bold; font-size:12.5px; color:#222; padding: 6px 8px 2px 8px; }
+
+  .np-table-header { display:flex; background:linear-gradient(to bottom,#b9b0dd,#9a8fce); font-weight:bold; font-size:11.5px; color:#1c1440; margin: 0 8px; position:relative; }
+  .np-table-header .cell { padding:3px 6px; border-right:1px solid #9083c0; }
+  .np-table-header .icons { position:absolute; right:4px; top:2px; display:flex; gap:6px; font-size:12px; color:#1c1440; }
+  .np-table-header .icons span { cursor:pointer; }
+  .np-table-body { margin: 0 8px; max-height: 150px; overflow-y:auto; border:1px solid #9083c0; border-top:none; }
+  .np-row { display:flex; border-bottom:1px dotted #dbe4ec; font-size:11.5px; color:#222; }
+  .np-row .cell { padding:3px 6px; border-right:1px solid #eef2f6; display:flex; align-items:center; }
+  .np-row .cell input[type=text] { width:100%; border:none; background:transparent; font-size:11.5px; font-family:inherit; padding:0; }
+  .np-row .cell input[type=text]:focus { outline:1px solid #8fb4d6; background:#fff; }
+  .np-row .cell input[type=checkbox] { margin:0 auto; }
+
+  .np-requestedby-row { display:flex; justify-content:space-between; align-items:center; margin: 6px 8px; font-size:12px; }
+  .np-requestedby-row .lbl { font-weight:bold; margin-right:6px; }
+  .np-requestedby-row input[type=text] { flex:1; margin: 0 10px; font-size:12px; padding:3px 6px; border:1px solid #a9b7c4; background:#f7f9fb; }
+  .np-requestedby-row .include { font-weight:bold; text-align:center; font-size:11px; }
+
+  .np-actions-title { font-weight:bold; font-size:12.5px; color:#222; padding: 4px 8px; display:flex; justify-content:space-between; }
+  .np-actions-title .icons { display:flex; gap:6px; font-size:12px; }
+  .np-actions-title .icons span { cursor:pointer; }
+
+  .np-action-block { margin: 0 8px 10px 8px; border:1px solid #9083c0; }
+  .np-action-header { display:flex; background:linear-gradient(to bottom,#b9b0dd,#9a8fce); font-size:11.5px; font-weight:bold; color:#1c1440; }
+  .np-action-header .dt-lbl { padding:3px 6px; border-right:1px solid #9083c0; width:110px; }
+  .np-action-header .dt-val { padding:3px 6px; border-right:1px solid #9083c0; flex:1; }
+  .np-action-header .dt-val input[type=text] { width:100%; border:none; background:transparent; font-family:inherit; font-size:11.5px; font-weight:normal; }
+  .np-action-header .db-lbl { padding:3px 10px; border-right:1px solid #9083c0; }
+  .np-action-header .db-val { flex:2; }
+  .np-action-header .db-val input[type=text] { width:100%; border:none; background:transparent; font-family:inherit; font-size:11.5px; font-weight:normal; padding:3px 6px; }
+  .np-action-textarea { width:100%; min-height: 65px; border:none; font-size:12px; padding:6px; font-family:inherit; resize:vertical; display:block; }
+  .np-action-textarea:focus { outline:1px solid #8fb4d6; }
+
+  /* ================= PROGRESS NOTES VIEW ================= */
+  .pf-progressnotes-view.active-view { display: block; }
+  .pn-body { display:flex; align-items:stretch; }
+  .pn-left { width: 52%; border-right: 1px solid #b9c6d4; display:flex; flex-direction:column; }
+  .pn-right { flex:1; display:flex; flex-direction:column; }
+
+  .pn-filter-row { display:flex; align-items:center; gap:8px; padding:6px 8px; background:#eef2f6; border-bottom:1px solid #b9c6d4; font-size:12px; }
+  .pn-filter-row .lbl { font-weight:bold; color:#222; }
+  .pn-filter-row select, .pn-filter-row input[type=text] { font-size:12px; padding:2px 4px; }
+  .pn-query-btn { font-size:12px; padding:4px 14px; border:1px solid #a9b7c4; background:linear-gradient(to bottom,#fefefe,#dbe4ec); cursor:pointer; }
+  .pn-query-btn:hover { background:#cfe2f0; }
+
+  .pn-entries { flex:1; overflow-y:auto; max-height: 480px; }
+  .pn-entry { border-bottom: 2px solid #b9c6d4; }
+  .pn-entry-header { display:flex; background:linear-gradient(to bottom,#c9c2ea,#a89bd9); font-size:11px; color:#1c1440; }
+  .pn-entry-header .col { flex:1; padding:3px 6px; border-right:1px solid #9083c0; }
+  .pn-entry-header .col b { display:block; }
+  .pn-entry-header .arrows { width:16px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; color:#333; font-size:9px; cursor:pointer; padding: 2px 0; }
+  .pn-entry-body { display:flex; }
+  .pn-entry-text { flex:1; padding:6px 10px; font-size:12px; line-height:1.4; color:#111; white-space:pre-wrap; min-height:110px; max-height:140px; overflow-y:auto; }
+
+  .pn-bottombar { display:flex; align-items:center; gap:6px; padding:6px 8px; background:#eef2f6; border-top:1px solid #b9c6d4; }
+  .pn-bottombar .spacer { flex:1; }
+  .pn-bottombar button { font-size:11.5px; padding:4px 12px; border:1px solid #a9b7c4; background:linear-gradient(to bottom,#fefefe,#dbe4ec); cursor:pointer; }
+  .pn-bottombar button:hover:not(:disabled) { background:#cfe2f0; }
+  .pn-bottombar button:disabled { color:#999; cursor:default; }
+  .pn-bottombar .ic-btn { width:26px; text-align:center; font-size:12px; padding:4px 0; }
+
+  .pn-search-row { display:flex; align-items:center; gap:8px; padding:6px 8px; background:#eef2f6; border-bottom:1px solid #b9c6d4; font-size:12px; }
+  .pn-search-row .lbl { font-weight:bold; color:#222; }
+  .pn-search-row select { font-size:12px; padding:2px 4px; }
+
+  .pn-linktabs { display:flex; flex-wrap:wrap; border-bottom:1px solid #b9c6d4; }
+  .pn-linktab { flex:1; text-align:center; padding:6px 4px; font-size:12px; font-weight:600; color:#1f3a63; border-right:1px solid #b9c6d4; cursor:pointer; background:#eef2f6; }
+  .pn-linktab:last-child { border-right:none; }
+  .pn-linktab:hover { background:#dcebf8; }
+
+  .pn-placeholder { flex:1; display:flex; align-items:flex-start; justify-content:center; padding-top: 30px; }
+  .pn-placeholder-text { font-weight:bold; color:#1a4fa0; font-size:13px; }
 </style>
 </head>
 <body>
@@ -1060,7 +1198,7 @@
           <div class="summary-dd-item" onclick="selectNotesItem('Triage Information')">Triage Information</div>
           <div class="summary-dd-item" onclick="selectNotesItem('Pregnancy Info')">Pregnancy Info</div>
           <div class="summary-dd-item" onclick="selectNotesItem('Pregnancy Info Nurse')">Pregnancy Info Nurse</div>
-          <div class="summary-dd-item" style="font-weight:bold; cursor:default; background:#f2f2f2;">Nursing Procedures</div>
+          <div class="summary-dd-item" style="font-weight:bold; background:#f2f2f2;" onclick="selectNotesItem('Nursing Procedures')">Nursing Procedures</div>
           <div class="summary-dd-item" onclick="selectNotesItem('Kardex')">Kardex</div>
           <div class="summary-dd-item" onclick="selectNotesItem('Discharge Summary')">Discharge Summary</div>
           <div class="summary-dd-item" onclick="selectNotesItem('CPR Register')">CPR Register</div>
@@ -1433,6 +1571,95 @@
       </div>
     </div>
 
+    <div class="pf-view pf-nursingproc-view" id="view-nursingproc">
+      <div class="np-filter-box">
+        <div class="np-filter-title">Filter Nursing Procedures</div>
+        <div class="np-filter-row">
+          <label><input type="radio" name="npFilter" checked> For Current Visit</label>
+          <label><input type="radio" name="npFilter"> For Patient</label>
+          <label><input type="radio" name="npFilter"> For Date Range</label>
+          <span>From :</span><input type="text">
+          <span>To :</span><input type="text">
+          <div class="np-query-btn" onclick="alert('Querying nursing procedures…')">Query</div>
+        </div>
+      </div>
+
+      <div class="np-tabs">
+        <div class="np-tab active">Procedure Request</div>
+        <div class="np-tab" onclick="alert('Procedure Done Without Request — not implemented in this demo')">Procedure Done Without Request</div>
+        <div class="np-tab" onclick="alert('Procedure History — not implemented in this demo')">Procedure History</div>
+        <div class="np-tab" onclick="alert('ECG Procedures — not implemented in this demo')">ECG Procedures</div>
+      </div>
+
+      <div class="np-section-title">Procedures Requests</div>
+      <div class="np-table-header">
+        <div class="cell" style="width:22%;">Procedure</div>
+        <div class="cell" style="width:20%;">Requested Date</div>
+        <div class="cell" style="flex:1;">Remarks</div>
+        <div class="cell" style="width:70px;">Follow Up</div>
+        <span class="icons"><span title="Add">+</span><span title="Remove">✕</span></span>
+      </div>
+      <div class="np-table-body" id="npProcRows"></div>
+
+      <div class="np-requestedby-row">
+        <span class="lbl">Requested By :</span>
+        <input type="text" value="JACOB KIZHAKKAYIL JOSE" readonly>
+        <span class="include">Include<br>in<br>print</span>
+      </div>
+
+      <div class="np-actions-title">
+        <span>Actions taken against the Request</span>
+        <span class="icons"><span title="Add">+</span><span title="Remove">✕</span></span>
+      </div>
+      <div id="npActionBlocks"></div>
+    </div>
+
+    <div class="pf-view pf-progressnotes-view" id="view-progressnotes">
+      <div class="pn-body">
+        <div class="pn-left">
+          <div class="pn-filter-row">
+            <span class="lbl">Date</span>
+            <select><option>Current Visit</option><option>Today</option><option>Last 7 Days</option></select>
+            <span class="lbl">From Date</span>
+            <input type="text">
+            <span class="lbl">To Date</span>
+            <input type="text">
+            <div class="pn-query-btn" onclick="alert('Querying progress notes…')">Query</div>
+          </div>
+          <div class="pn-entries" id="pnEntries"></div>
+          <div class="pn-bottombar">
+            <button onclick="alert('Showing summary…')">Show Summary</button>
+            <span class="spacer"></span>
+            <button onclick="alert('Opening Surgical Audit Checklist…')">Surgical Audit Checklist</button>
+            <button disabled title="Not applicable for this patient">Pharmacist Intervention</button>
+            <button class="ic-btn" onclick="alert('Add new progress note')">+</button>
+            <button class="ic-btn" onclick="alert('Remove')">✕</button>
+          </div>
+        </div>
+
+        <div class="pn-right">
+          <div class="pn-search-row">
+            <span class="lbl">Search For :</span>
+            <select><option>Last 24 Hrs</option><option>Last 48 Hrs</option><option>All</option></select>
+          </div>
+          <div class="pn-linktabs">
+            <div class="pn-linktab" onclick="selectPnSummary('Notes')">Notes</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Lab')">Lab</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Medical')">Medical</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Radiology')">Radiology</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Kardex')">Kardex</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Progress')">Progress</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Vitals')">Vitals</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Consults')">Consults</div>
+            <div class="pn-linktab" onclick="selectPnSummary('Ph.Notes')">Ph.Notes</div>
+          </div>
+          <div class="pn-placeholder">
+            <div class="pn-placeholder-text" id="pnPlaceholderText">Click On the above links to get the Respective Summary</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ============ NURSING SBAR MODAL ============ -->
@@ -1545,6 +1772,59 @@
     <div class="prevsbar-bottombar">
       <button onclick="closePreviousSBAR()">Close</button>
     </div>
+  </div>
+
+  <!-- ============ DIABETIC CHART MODAL ============ -->
+  <div class="diab-modal" id="diabModal">
+    <div class="diab-titlebar">
+      <div class="diab-titlebar-left">
+        <span class="icon"></span>
+        <span>Diabetic Chart</span>
+      </div>
+      <span class="diab-closeicon" onclick="closeDiabeticChart()">✕</span>
+    </div>
+
+    <div class="diab-patientbar">
+      <span class="diab-pname" id="diabPatientLine">Patient Name, Male, 76 year</span>
+      <div class="diab-actions">
+        <div class="diab-abtn" onclick="alert('Printing…')">🖨 Print</div>
+        <div class="diab-abtn" onclick="alert('Saved')">💾 Save</div>
+        <div class="diab-abtn" onclick="closeDiabeticChart()">💾 Save &amp; Close</div>
+        <div class="diab-abtn" onclick="closeDiabeticChart()">✕ Close</div>
+      </div>
+    </div>
+
+    <div class="diab-dayrow">
+      <span class="lbl">Day</span>
+      <select><option>10/03/2025</option><option>09/03/2025</option><option>08/03/2025</option></select>
+    </div>
+
+    <div class="diab-panel-hdr">Diabetic Information</div>
+    <div class="diab-table-wrap">
+      <div class="diab-table-header">
+        <div class="cell" style="width:26%;">Entry Date</div>
+        <div class="cell" style="width:20%;">Urine Acetones</div>
+        <div class="cell" style="width:22%;">Blood Glucose (mmol)</div>
+        <div class="cell" style="width:16%;">Urine Exam</div>
+        <div class="cell" style="flex:1;">User Name</div>
+        <span class="closex" onclick="clearDiabInfoRows()">✕</span>
+      </div>
+      <div class="diab-table-body" id="diabInfoRows"></div>
+    </div>
+    <div class="diab-chart-btn-row"><button onclick="alert('Opening Diabetic Chart graph…')">Diabetic Chart</button></div>
+
+    <div class="diab-panel-hdr">Glycaemic Cycle</div>
+    <div class="diab-table-wrap">
+      <div class="diab-table-header">
+        <div class="cell" style="width:20%;">Entry Date</div>
+        <div class="cell" style="width:14%;">Result (mmol)</div>
+        <div class="cell" style="width:18%;">Pre/Post</div>
+        <div class="cell" style="width:22%;">Remarks</div>
+        <div class="cell" style="flex:1;">User Name</div>
+      </div>
+      <div class="diab-table-body" id="diabGlycRows"></div>
+    </div>
+    <div class="diab-chart-btn-row"><button onclick="alert('Opening Glycaemic Chart graph…')">Glycaemic Chart</button></div>
   </div>
 
 </div>
@@ -1670,11 +1950,136 @@
     }
   }
 
+  /* Nursing Procedures view */
+  const nursingProcData = [
+    {procedure:"Blood Collection", date:"27/02/25 06:00", remarks:"collected and sent to lab"},
+    {procedure:"Dressing - Wound", date:"25/02/25 12:26", remarks:"wound management note"},
+    {procedure:"Dressing - Wound", date:"19/02/25 13:20", remarks:"wound management note"},
+    {procedure:"Dressing - Wound", date:"11/02/25 13:34", remarks:"wound management note"},
+    {procedure:"Dressing - Wound", date:"04/02/25 10:42", remarks:"WMT"},
+    {procedure:"Dressing - Wound", date:"24/12/24 14:05", remarks:"wound management note"},
+    {procedure:"Dressing - Wound", date:"17/12/24 13:43", remarks:"wound management note"}
+  ];
+
+  function renderNursingProcRows(){
+    const wrap = document.getElementById('npProcRows');
+    if(wrap.dataset.rendered !== '1'){
+      wrap.innerHTML = '';
+      nursingProcData.forEach(p => {
+        const row = document.createElement('div');
+        row.className = 'np-row';
+        row.innerHTML =
+          '<div class="cell" style="width:22%;">' + p.procedure + '</div>' +
+          '<div class="cell" style="width:20%;">' + p.date + '</div>' +
+          '<div class="cell" style="flex:1;">' + p.remarks + '</div>' +
+          '<div class="cell" style="width:70px;"><input type="checkbox"></div>';
+        wrap.appendChild(row);
+      });
+      // one blank row for adding a new request
+      const emptyRow = document.createElement('div');
+      emptyRow.className = 'np-row';
+      emptyRow.innerHTML =
+        '<div class="cell" style="width:22%;"><input type="text"></div>' +
+        '<div class="cell" style="width:20%;"><input type="text"></div>' +
+        '<div class="cell" style="flex:1;"><input type="text"></div>' +
+        '<div class="cell" style="width:70px;"><input type="checkbox"></div>';
+      wrap.appendChild(emptyRow);
+      wrap.dataset.rendered = '1';
+    }
+
+    renderNursingActionBlocks();
+  }
+
+  function renderNursingActionBlocks(){
+    const wrap = document.getElementById('npActionBlocks');
+    if(wrap.dataset.rendered === '1') return;
+    wrap.innerHTML = '';
+
+    const blocksData = [
+      { dt: "10/03/2025 12:04" },
+      { dt: "" },
+      { dt: "" },
+      { dt: "" }
+    ];
+
+    blocksData.forEach(b => {
+      const block = document.createElement('div');
+      block.className = 'np-action-block';
+      block.innerHTML =
+        '<div class="np-action-header">' +
+          '<div class="dt-lbl">Date &amp; Time</div>' +
+          '<div class="dt-val"><input type="text" value="' + b.dt + '"></div>' +
+          '<div class="db-lbl">Done By</div>' +
+          '<div class="db-val"><input type="text"></div>' +
+        '</div>' +
+        '<textarea class="np-action-textarea"></textarea>';
+      wrap.appendChild(block);
+    });
+    wrap.dataset.rendered = '1';
+  }
+
+  /* Progress Notes view */
+  const progressNoteEntries = [
+    {
+      exdate: "10/03/2025 10:20",
+      by: "MUHAMMED HARSHAD PARUT",
+      supervised: "",
+      time: "10/03/2025 10:42",
+      text: "RESPIRATORY THERAPIST NOTES:\n=========================\n(MORNING ROUND)\n\n- 76yrs old male pt with following background:\n- HTN, Not diabetic\n- Prostate hyperplasia , operated in Private hospital"
+    },
+    {
+      exdate: "09/03/2025 17:01",
+      by: "MEGHA MANOJ",
+      supervised: "",
+      time: "09/03/2025 17:02",
+      text: "RESPIRATORY THERAPIST NOTES:\n=======================\n\n-PT SEEN ON MV VIA TT;PSIMV; PC 16, PEEP 10, RR 16, PS 16, FIO2 45%\n-NOT IN RESPIRATORY DISTRESS, SPO2 99%\n-CPT AND SUCTION DONE: MINIMAL THICK YELLOWISH SECRETIONS\n\nPLAN:"
+    },
+    {
+      exdate: "09/03/2025 12:49",
+      by: "FATHALRAHMAN ABDULGADI",
+      supervised: "",
+      time: "09/03/2025 12:49",
+      text: "- 76yrs old male pt Background:\n- HTN, Not diabetic\n- Prostate hyperplasia , operated in Private hospital\n- Labelled to has gastritis and OGD done before and was assured\n- Haemorroids\n- Moderate AS, seen at RH cardio 5/2021: as per notes: CAG done in private\nShowed mild CAD fro medical ttt, planned to Continue conservative medical ttt"
+    }
+  ];
+
+  function renderProgressNotes(){
+    const wrap = document.getElementById('pnEntries');
+    if(wrap.dataset.rendered === '1') return;
+    wrap.innerHTML = '';
+    progressNoteEntries.forEach(en => {
+      const box = document.createElement('div');
+      box.className = 'pn-entry';
+      box.innerHTML =
+        '<div class="pn-entry-header">' +
+          '<div class="col"><b>Ex. Date &amp; Time</b>' + en.exdate + '</div>' +
+          '<div class="col"><b>Entered By :</b>' + en.by + '</div>' +
+          '<div class="col"><b>Rounds Supervised By :</b>' + en.supervised + '</div>' +
+          '<div class="col"><b>Entered Time</b>' + en.time + '</div>' +
+          '<div class="arrows"><span>▲</span><span>▼</span></div>' +
+        '</div>' +
+        '<div class="pn-entry-body"><div class="pn-entry-text"></div></div>';
+      box.querySelector('.pn-entry-text').textContent = en.text;
+      wrap.appendChild(box);
+    });
+    wrap.dataset.rendered = '1';
+  }
+
+  function selectPnSummary(name){
+    document.getElementById('pnPlaceholderText').textContent = 'This would show the ' + name + ' summary.';
+  }
+
   function selectNotesItem(name){
     document.getElementById('notesDropdown').classList.remove('open');
     if(name === 'Kardex'){
       renderKardex();
       activateView('view-kardex');
+    } else if(name === 'Nursing Procedures'){
+      renderNursingProcRows();
+      activateView('view-nursingproc');
+    } else if(name === 'Progress Notes'){
+      renderProgressNotes();
+      activateView('view-progressnotes');
     } else {
       activateView('view-placeholder', name);
     }
@@ -1940,11 +2345,93 @@
     activateView('view-lab');
   }
 
+  /* Diabetic Chart modal */
+  function buildDiabInfoRowHTML(entryDate, userName, selected){
+    return '<div class="cell' + (selected ? ' selected' : '') + '" style="width:26%;">' + (entryDate !== undefined ? '<span>'+entryDate+'</span>' : '<input type="text">') + '</div>' +
+      '<div class="cell" style="width:20%;"><input type="text"></div>' +
+      '<div class="cell" style="width:22%;"><input type="text"></div>' +
+      '<div class="cell" style="width:16%;"><input type="text"></div>' +
+      '<div class="cell" style="flex:1;">' + (userName !== undefined ? '<span>'+userName+'</span>' : '<input type="text">') + '</div>';
+  }
+
+  function renderDiabInfoRows(){
+    const wrap = document.getElementById('diabInfoRows');
+    if(wrap.dataset.rendered === '1') return;
+    wrap.innerHTML = '';
+
+    const row1 = document.createElement('div');
+    row1.className = 'diab-row';
+    row1.innerHTML = buildDiabInfoRowHTML('10/03/2025 12:17', 'IRENE FLORES', true);
+    wrap.appendChild(row1);
+
+    for(let i=0;i<3;i++){
+      const row = document.createElement('div');
+      row.className = 'diab-row';
+      row.innerHTML = buildDiabInfoRowHTML();
+      wrap.appendChild(row);
+    }
+    wrap.dataset.rendered = '1';
+  }
+
+  function clearDiabInfoRows(){
+    document.getElementById('diabInfoRows').dataset.rendered = '';
+    renderDiabInfoRows();
+  }
+
+  function buildDiabGlycRowHTML(entryDate, result, prePost, userName){
+    const prePostOptions = ['', 'Pre BreakFast', 'Post BreakFast', 'Pre Lunch', 'Post Lunch', 'Pre Dinner', 'Post Dinner', 'Bed Time'];
+    let selectHtml = '<select>';
+    prePostOptions.forEach(opt => {
+      selectHtml += '<option' + (opt === prePost ? ' selected' : '') + '>' + opt + '</option>';
+    });
+    selectHtml += '</select>';
+
+    return '<div class="cell" style="width:20%;">' + (entryDate !== undefined ? '<span>'+entryDate+'</span>' : '<input type="text">') + '</div>' +
+      '<div class="cell" style="width:14%;">' + (result !== undefined ? '<span>'+result+'</span>' : '<input type="text">') + '</div>' +
+      '<div class="cell" style="width:18%;">' + selectHtml + '</div>' +
+      '<div class="cell" style="width:22%;"><input type="text"></div>' +
+      '<div class="cell" style="flex:1;">' + (userName !== undefined ? '<span>'+userName+'</span>' : '<input type="text">') + '</div>';
+  }
+
+  function renderDiabGlycRows(){
+    const wrap = document.getElementById('diabGlycRows');
+    if(wrap.dataset.rendered === '1') return;
+    wrap.innerHTML = '';
+
+    const row1 = document.createElement('div');
+    row1.className = 'diab-row';
+    row1.innerHTML = buildDiabGlycRowHTML('10/03/2025 06:00', '8.6', 'Pre BreakFast', 'SHARY VISWANATHAN');
+    wrap.appendChild(row1);
+
+    for(let i=0;i<4;i++){
+      const row = document.createElement('div');
+      row.className = 'diab-row';
+      row.innerHTML = buildDiabGlycRowHTML();
+      wrap.appendChild(row);
+    }
+    wrap.dataset.rendered = '1';
+  }
+
+  function openDiabeticChart(){
+    const genderLine = document.getElementById('pfGenderLine');
+    if(genderLine){
+      document.getElementById('diabPatientLine').textContent = 'Patient Name, ' + genderLine.textContent.replace(/\u00A0/g, ' ').replace(/Year\(s\)/, 'year').replace(/\s+Omani/, '');
+    }
+    renderDiabInfoRows();
+    renderDiabGlycRows();
+    document.getElementById('diabModal').classList.add('open');
+  }
+  function closeDiabeticChart(){
+    document.getElementById('diabModal').classList.remove('open');
+  }
+
   function selectReadingsItem(name){
     document.getElementById('readingsDropdown').classList.remove('open');
     if(name === 'Vital Signs/Anthopometry'){
       renderVitalSigns();
       activateView('view-vitalsigns');
+    } else if(name === 'Diabetic Chart'){
+      openDiabeticChart();
     } else {
       activateView('view-placeholder', name);
     }
