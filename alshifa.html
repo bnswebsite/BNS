@@ -879,6 +879,247 @@
 
   .pn-placeholder { flex:1; display:flex; align-items:flex-start; justify-content:center; padding-top: 30px; }
   .pn-placeholder-text { font-weight:bold; color:#1a4fa0; font-size:13px; }
+
+  /* ================= MEDICINE ADMINISTRATION VIEW ================= */
+  .pf-medadmin-view.active-view { display: block; }
+  .ma-topbar { display:flex; align-items:center; justify-content:space-between; padding:4px 8px; background:#eef2f6; border-bottom:1px solid #b9c6d4; }
+  .ma-title { font-weight:bold; color:#1f3a63; font-size:13px; }
+  .ma-note { color:#1a4fa0; font-size:11.5px; font-style:italic; padding: 2px 8px; }
+  .ma-actionbar { display:flex; gap:4px; padding:4px 8px; background:#eef2f6; border-bottom:1px solid #b9c6d4; }
+  .ma-abtn { display:flex; align-items:center; gap:4px; font-size:11.5px; font-weight:600; color:#16324f; padding:3px 8px; cursor:pointer; border:1px solid #a9b7c4; background: linear-gradient(to bottom,#fefefe,#dbe4ec); border-radius:2px; }
+  .ma-abtn:hover { background:#cfe2f0; }
+
+  .ma-idrow { display:flex; align-items:center; gap:14px; padding:4px 8px; font-size:12px; }
+  .ma-idrow .lbl { font-weight:bold; color:#222; }
+  .ma-idrow .pname { font-weight:600; color:#222; }
+  .ma-idrow .spacer { flex:1; }
+  .ma-idrow .ward { font-weight:bold; color:#222; }
+
+  .ma-tabs { display:flex; margin: 0 8px; }
+  .ma-tab { padding:4px 14px; font-size:12px; font-weight:600; color:#1f3a63; background:#e4e9ee; border:1px solid #b9c6d4; border-bottom:none; cursor:pointer; margin-right:2px; }
+  .ma-tab.active { background:#fff; font-weight:bold; }
+  .ma-tab:hover { background:#dcebf8; }
+
+  .ma-hourrow { display:flex; margin: 0 8px; border:1px solid #b9c6d4; border-top:none; font-size:10.5px; }
+  .ma-hourcell { flex:1; text-align:center; padding:3px 1px; border-right:1px solid #dbe4ec; position:relative; }
+  .ma-hourcell:last-child { border-right:none; }
+  .ma-hourcell .cnt { display:block; color:#1a4fa0; font-weight:bold; font-size:10px; }
+  .ma-hourcell .cnt-input { display:block; width:100%; box-sizing:border-box; border:none; border-top:1px solid #dbe4ec; background:transparent; text-align:center; color:#1a4fa0; font-weight:bold; font-size:10.5px; font-family:inherit; padding:2px 0; height:18px; }
+  .ma-hourcell .cnt-input:focus { outline:1px solid #8fb4d6; background:#fff; }
+  .ma-hourcell.all { font-weight:bold; flex: 0 0 34px; }
+
+  .ma-body { display:flex; margin: 6px 8px; gap: 8px; align-items:flex-start; }
+  .ma-left { flex: 1.4; display:flex; flex-direction:column; }
+  .ma-right { flex: 1; display:flex; flex-direction:column; }
+
+  .ma-prescription-hdr { display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:bold; color:#222; padding: 2px 2px; }
+  .ma-prescription-hdr .flag { color:#1a4fa0; }
+  .ma-prescription-hdr .chk { font-weight:normal; font-size:11.5px; }
+
+  .ma-presc-table-header { display:flex; background:#eef2f6; border:1px solid #c7d1da; font-size:11px; font-weight:bold; color:#333; }
+  .ma-presc-table-header .cell { padding:3px 5px; border-right:1px solid #dbe4ec; }
+  .ma-presc-body { border:1px solid #c7d1da; border-top:none; max-height: 220px; overflow-y:auto; }
+  .ma-presc-row { display:flex; border-bottom:1px solid #eef2f6; font-size:11px; color:#222; cursor:pointer; }
+  .ma-presc-row:hover { background:#eaf3fb; }
+  .ma-presc-row.selected { background:#ffe3c2; }
+  .ma-presc-row .cell { padding:3px 5px; border-right:1px solid #eef2f6; display:flex; align-items:center; }
+  .ma-presc-row .plus-btn { color:#1a4fa0; font-weight:bold; cursor:pointer; }
+  .ma-presc-row .plus-btn:hover { color:#0d2f6e; }
+
+  .ma-bottom-form { padding: 4px 2px; font-size:11.5px; }
+  .ma-bottom-form .row { display:flex; align-items:center; gap:6px; padding:2px 0; }
+  .ma-bottom-form .lbl { font-weight:bold; color:#222; min-width:80px; }
+  .ma-bottom-form input[type=text] { flex:1; font-size:11.5px; padding:2px 4px; border:1px solid #a9b7c4; }
+  .ma-bottom-form .qty { text-align:right; font-weight:bold; }
+
+  .ma-standing-hdr { background: linear-gradient(to bottom,#b9b0dd,#9a8fce); color:#1c1440; font-weight:bold; padding:3px 8px; font-size:11.5px; margin-top:4px; }
+  .ma-standing-body { border:1px solid #9083c0; border-top:none; min-height: 40px; font-size:11px; color:#888; padding:4px 8px; }
+
+  .ma-legend { display:flex; flex-wrap:wrap; gap:14px; padding: 4px 8px; font-size:10px; color:#333; border-top:1px solid #b9c6d4; margin-top:4px; }
+  .ma-legend span { white-space:nowrap; }
+  .ma-legend .s-stop { color:#c0392b; font-weight:bold; }
+  .ma-legend .s-allergy { color:#c0392b; }
+
+  .ma-admin-hdr { display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:bold; color:#222; padding: 2px 2px; }
+  .ma-admin-table-header { display:flex; background:#eef2f6; border:1px solid #c7d1da; font-size:11px; font-weight:bold; color:#333; }
+  .ma-admin-table-header .cell { padding:3px 5px; border-right:1px solid #dbe4ec; }
+  .ma-admin-body { border:1px solid #c7d1da; border-top:none; max-height: 140px; overflow-y:auto; }
+  .ma-admin-row { display:flex; border-bottom:1px solid #eef2f6; font-size:11px; color:#222; }
+  .ma-admin-row .cell { padding:3px 5px; border-right:1px solid #eef2f6; display:flex; align-items:center; }
+  .ma-admin-row .cell.check { color:#2e8b2e; font-weight:bold; }
+
+  .ma-total-row { display:flex; align-items:center; gap:10px; padding:4px 2px; font-size:11.5px; font-weight:bold; }
+  .ma-total-row .spacer { flex:1; }
+  .ma-total-row button { font-size:11px; padding:4px 10px; border:1px solid #a9b7c4; background:linear-gradient(to bottom,#fefefe,#dbe4ec); cursor:pointer; }
+  .ma-total-row button:hover { background:#cfe2f0; }
+
+  .ma-detail-form .row { display:flex; align-items:center; gap:6px; padding:2px 2px; font-size:11.5px; }
+  .ma-detail-form .lbl { font-weight:bold; color:#222; min-width:100px; text-align:right; }
+  .ma-detail-form input[type=text] { flex:1; font-size:11.5px; padding:2px 4px; border:1px solid #a9b7c4; background:#f7f9fb; }
+
+  .ma-showadmin-row { display:flex; align-items:center; gap:10px; padding:4px 2px; font-size:11.5px; font-weight:bold; color:#6c4aa8; }
+  .ma-showadmin-row label { display:flex; align-items:center; gap:3px; font-weight:bold; }
+
+  /* ================= MEDICINE ADMIN ENTRY POPUP ================= */
+  .ma-entry-modal {
+    display: none;
+    position: absolute;
+    top: 60px; left: 90px;
+    width: 640px; max-width: 94%;
+    background: #eef2f6;
+    border: 1px solid #5c6b8a;
+    box-shadow: 4px 6px 18px rgba(0,0,0,0.45);
+    z-index: 500;
+    font-size: 12px;
+  }
+  .ma-entry-modal.open { display: block; }
+
+  .ma-entry-titlebar { display:flex; align-items:center; gap:8px; background: linear-gradient(to bottom,#fdfefe,#dfe8f0); border-bottom:1px solid #b9c6d4; padding:4px 8px; }
+  .ma-entry-titlebar .icon { width:14px; height:14px; background: linear-gradient(135deg,#3b6ea5,#183a63); border-radius:3px; display:inline-block; flex-shrink:0; }
+  .ma-entry-medname { font-weight:bold; font-size:12.5px; color:#1f3a63; flex:1; }
+  .ma-entry-nav { display:flex; align-items:center; gap:10px; font-size:11px; white-space:nowrap; }
+  .ma-entry-nav span:not(.ma-entry-close) { color:#1a4fa0; cursor:pointer; font-weight:600; }
+  .ma-entry-nav span:not(.ma-entry-close):hover { text-decoration:underline; }
+  .ma-entry-nav label { display:flex; align-items:center; gap:3px; font-weight:600; }
+  .ma-entry-close { font-size:14px; color:#333; cursor:pointer; padding:2px 6px; }
+  .ma-entry-close:hover { color:#fff; background:#c0392b; }
+
+  .ma-entry-hours-label { color:#a0301f; font-weight:bold; font-size:12px; padding: 6px 10px 2px 10px; }
+  .ma-entry-hourgrid { display:grid; grid-template-columns: repeat(12, 1fr); border:1px solid #9aa6c0; margin: 2px 10px; }
+  .ma-entry-hour { border-right:1px solid #c7d1da; border-bottom:1px solid #c7d1da; text-align:center; padding:3px 1px; font-size:10.5px; cursor:pointer; min-height:34px; }
+  .ma-entry-hour:nth-child(12n) { border-right:none; }
+  .ma-entry-hour { background:#d4d4d8; color:#777; }
+  .ma-entry-hour.selected { background:#fff; color:#111; font-weight:bold; }
+  .ma-entry-hour .dose-input { display:block; width:90%; margin:2px auto 0; box-sizing:border-box; border:none; border-bottom:1px solid #9aa6c0; background:transparent; text-align:center; color:#1a4fa0; font-weight:bold; font-size:10.5px; font-family:inherit; padding:1px 0; }
+  .ma-entry-hour .dose-input:disabled { visibility:hidden; }
+  .ma-entry-hour .dose-input:focus { outline:1px solid #8fb4d6; background:#fff; }
+  .ma-entry-hour .dose { display:block; color:#1a4fa0; font-weight:bold; font-size:10.5px; margin-top:2px; }
+  .ma-entry-hour input { margin:0 0 2px 0; }
+
+  .ma-entry-sub-label { color:#a0301f; font-weight:bold; font-size:11.5px; padding: 6px 10px 2px 10px; }
+  .ma-entry-cat-row { display:flex; align-items:center; gap:8px; padding: 2px 10px; font-size:12px; }
+  .ma-entry-cat-row .lbl { font-weight:bold; color:#222; }
+  .ma-entry-cat-row select { font-size:12px; padding:2px 4px; flex:1; max-width:220px; }
+  .ma-entry-cat-row .filter-icon { margin-left:auto; cursor:pointer; font-size:13px; }
+
+  .ma-entry-table-header { display:flex; background:#eef2f6; border:1px solid #c7d1da; margin: 4px 10px 0 10px; font-size:10.5px; font-weight:bold; color:#333; }
+  .ma-entry-table-header .cell { padding:3px 4px; border-right:1px solid #dbe4ec; }
+  .ma-entry-table-body { border:1px solid #c7d1da; border-top:none; margin: 0 10px; min-height: 40px; }
+  .ma-entry-row { display:flex; border-bottom:1px solid #eef2f6; font-size:11px; }
+  .ma-entry-row .cell { padding:3px 4px; border-right:1px solid #eef2f6; display:flex; align-items:center; }
+  .ma-entry-row .cell input[type=text] { width:100%; border:none; background:transparent; font-size:11px; font-family:inherit; padding:0; }
+  .ma-entry-row .cell input[type=text]:focus { outline:1px solid #8fb4d6; background:#fff; }
+
+  .ma-entry-footer-row { display:flex; align-items:center; gap:8px; padding: 5px 10px; font-size:12px; }
+  .ma-entry-footer-row .lbl { font-weight:bold; color:#222; }
+  .ma-entry-footer-row input[type=text] { font-size:12px; padding:2px 4px; border:1px solid #a9b7c4; }
+  .ma-entry-footer-row .spacer { flex:1; }
+  .ma-entry-footer-row label { display:flex; align-items:center; gap:4px; font-weight:600; }
+
+  .ma-entry-buttons { display:flex; justify-content:flex-end; gap:8px; padding: 8px 10px; border-top:1px solid #b9c6d4; }
+  .ma-entry-buttons button { font-size:12px; font-weight:bold; padding:5px 16px; border:1px solid #a9b7c4; background:linear-gradient(to bottom,#f6f7fa,#dde3ea); cursor:pointer; }
+  .ma-entry-buttons button:hover { background:#cfe2f0; }
+  .ma-entry-buttons button.save { background:linear-gradient(to bottom,#4f8fd6,#1c4f8c); color:#fff; border-color:#163d6c; }
+
+  /* ================= INTAKE / OUTPUT VIEW ================= */
+  .pf-io-view.active-view { display:block; }
+  .io-wrap { padding:6px 8px; font-size:12px; }
+  .io-top { display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+  .io-top select { font-size:12px; padding:2px 4px; }
+  .io-shifts { flex:1; max-width:560px; margin-left:auto; border:1px solid #9aa0cc; background:#e6e6f6; padding:3px 14px; display:flex; justify-content:space-between; font-weight:bold; color:#1c1440; }
+  .io-shifts label { display:flex; align-items:center; gap:4px; }
+  .io-tabs { display:flex; margin-bottom:-1px; }
+  .io-tab { padding:3px 12px; font-size:11.5px; background:#e4e9ee; border:1px solid #9aa0cc; border-bottom:none; cursor:pointer; margin-right:2px; }
+  .io-tab.active { background:#fff; font-weight:bold; }
+  .io-grid { border:1px solid #6c64b8; background:#e4e4f6; max-height:420px; overflow-y:auto; }
+  .io-head, .io-row, .io-foot { display:grid; grid-template-columns:200px repeat(8,1fr) 84px; }
+  .io-head { background:#6c64b8; color:#fff; font-weight:bold; font-size:11.5px; position:sticky; top:0; z-index:1; }
+  .io-head div { padding:5px 4px; text-align:center; }
+  .io-head div:first-child { text-align:left; }
+  .io-sec { display:flex; justify-content:space-between; align-items:center; background:#9a94d6; color:#1c1440; font-style:italic; font-weight:bold; font-size:11.5px; padding:2px 6px; }
+  .io-sec button { font-size:11px; padding:0 8px; border:1px solid #6c64b8; background:#fff; cursor:pointer; font-style:normal; font-weight:bold; color:#1a4fa0; }
+  .io-row { border-bottom:1px solid #b8b6e0; }
+  .io-row input { border:none; border-right:1px solid #b8b6e0; background:#f6f6fd; font-size:11.5px; text-align:center; padding:2px; font-family:inherit; min-width:0; width:100%; box-sizing:border-box; height:20px; }
+  .io-row input:focus { outline:1px solid #6c64b8; background:#fff; }
+  .io-row input.io-nameinp { text-align:left; background:#dcdcf2; font-weight:bold; }
+  .io-row .io-dt { display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:11.5px; background:#e4e4f6; }
+  .io-foot { background:#6c64b8; color:#fff; font-size:11.5px; font-weight:bold; font-style:italic; }
+  .io-foot div { padding:3px 4px; text-align:center; }
+  .io-foot div:first-child { text-align:right; padding-right:14px; }
+  .io-footwrap { background:#6c64b8; }
+  .io-bottom { display:flex; justify-content:space-between; align-items:flex-start; margin-top:8px; }
+  .io-entered { display:flex; flex-direction:column; gap:2px; font-weight:bold; }
+  .io-entered input { width:260px; font-size:12px; padding:3px 4px; border:1px solid #a9b7c4; }
+  .io-summary { display:grid; grid-template-columns:auto 100px; gap:3px 8px; align-items:center; font-weight:bold; text-align:right; color:#1c1440; }
+  .io-summary .v { background:#c9c6ee; padding:2px 6px; text-align:right; }
+  .io-legend { display:flex; flex-wrap:wrap; gap:12px; margin-top:10px; padding-top:6px; border-top:1px solid #b9c6d4; font-size:10px; color:#333; }
+
+  /* ================= IMAGING REQUEST VIEW ================= */
+  .pf-imaging-view.active-view { display:block; }
+  .im-wrap { display:flex; font-size:11.5px; }
+  .im-main { flex:1; min-width:0; padding:4px 6px; }
+  .im-side { width:176px; padding:4px 6px 4px 0; display:flex; flex-direction:column; }
+  .im-filter { display:flex; align-items:center; gap:4px; margin-bottom:4px; flex-wrap:wrap; }
+  .im-filter input { width:150px; font-size:11.5px; padding:2px 4px; border:1px solid #a9b7c4; }
+  .im-chip { font-size:10.5px; padding:1px 5px; border:1px solid #a9b7c4; background:#fff; white-space:nowrap; }
+  .im-chip i { display:inline-block; width:8px; height:8px; margin-right:3px; }
+  .im-top { display:flex; gap:4px; }
+  .im-table { flex:1; min-width:0; border:1px solid #6c64b8; background:#fff; }
+  .im-cols { display:grid; grid-template-columns:20px 112px 1fr 34px 82px 20px 64px 48px 66px 20px 24px; }
+  .im-thead { background:#7d78c4; color:#fff; font-weight:bold; font-size:11px; }
+  .im-thead div { padding:3px 3px; }
+  .im-tbody { max-height:150px; overflow-y:auto; min-height:150px; }
+  .im-tr { border-bottom:1px solid #c9c6ee; cursor:pointer; align-items:center; }
+  .im-tr > div { padding:2px 3px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+  .im-tr:hover { background:#eef1fb; }
+  .im-tr.sel { background:#d3dcf3; }
+  .im-tr select { font-size:11px; width:100%; }
+  .im-tr input[type=text] { width:100%; border:none; background:transparent; font-size:11.5px; font-family:inherit; padding:0; }
+  .im-tr a { color:#1a4fa0; text-decoration:underline; }
+  .im-x { border:none; background:none; cursor:pointer; font-weight:bold; color:#333; }
+  .im-short { width:150px; background:#6b6b73; color:#fff; display:flex; flex-direction:column; }
+  .im-short-h { background:#8e8e9a; font-weight:bold; font-size:10.5px; padding:3px 4px; display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
+  .im-short-l { overflow-y:auto; max-height:170px; }
+  .im-short-l div { padding:2px 6px; font-size:11px; cursor:pointer; border-bottom:1px solid #7b7b86; }
+  .im-short-l div:hover { background:#8585b8; }
+  .im-msg { background:#fffbc8; border:1px solid #e3dc8a; min-height:20px; padding:3px 8px; margin:6px 0; font-size:11.5px; color:#5a4a12; }
+  .im-tabs { display:flex; gap:2px; }
+  .im-tab { flex:1; text-align:center; padding:4px 2px; font-weight:600; font-size:11.5px; background:#e4e9ee; border:1px solid #9aa0cc; border-bottom:none; cursor:pointer; }
+  .im-tab.active { background:#fff; font-weight:bold; }
+  .im-panel { border:1px solid #9aa0cc; background:#f5f5fb; padding:6px; }
+  .im-det { display:flex; gap:8px; }
+  .im-det-l { flex:1; min-width:0; }
+  .im-det-r { width:44%; border:1px solid #b9c6d4; background:#f0f0f8; padding:4px 8px; }
+  .im-lbl { font-weight:bold; font-size:11px; color:#222; display:block; margin-bottom:1px; }
+  .im-det textarea, .im-det input[type=text] { font-size:11.5px; border:1px solid #a9b7c4; background:#fff; padding:2px 4px; font-family:inherit; box-sizing:border-box; }
+  .im-det textarea { width:100%; height:62px; resize:none; }
+  .im-two { display:flex; gap:8px; margin-bottom:6px; }
+  .im-two > div { flex:1; min-width:0; }
+  .im-box { border:1px solid #b9c6d4; padding:5px 6px; display:flex; gap:8px; margin-bottom:6px; }
+  .im-fieldrow { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
+  .im-fieldrow .im-lbl { min-width:112px; margin:0; }
+  .im-fieldrow input { flex:1; min-width:0; }
+  .im-q { display:flex; align-items:center; gap:8px; padding:4px 0; border-top:1px solid #d5dbe3; }
+  .im-q:first-child { border-top:none; }
+  .im-q label { display:inline-flex; align-items:center; gap:2px; }
+  .im-q .im-lbl { margin:0; min-width:80px; }
+  .im-lmp { border:1px solid #b9c6d4; padding:4px 6px; margin-top:4px; }
+  .im-bar { display:flex; flex-wrap:wrap; gap:2px; margin-top:6px; padding:4px 0; border-top:1px solid #b9c6d4; }
+  .im-btn { font-size:11px; font-weight:600; color:#16324f; padding:3px 7px; cursor:pointer; border:1px solid transparent; }
+  .im-btn:hover { background:#dcebf8; border-color:#a9b7c4; }
+  .im-btn.dis { color:#9aa; cursor:default; }
+  .im-btn.dis:hover { background:none; border-color:transparent; }
+  .im-bar select, .im-bar input { font-size:11px; padding:1px 3px; border:1px solid #a9b7c4; }
+  .im-side h4 { margin:2px 0 4px; text-align:center; color:#1f3a63; font-size:12px; text-decoration:underline; }
+  .im-body { background:#fff; border:1px solid #b9c6d4; text-align:center; position:relative; }
+  .im-body svg { display:block; margin:0 auto; }
+  .im-body .reg { fill:transparent; cursor:pointer; }
+  .im-body .reg:hover { fill:rgba(60,90,200,0.22); }
+  .im-rl { position:absolute; top:6px; font-size:16px; font-weight:bold; color:#d9822b; }
+  .im-hint { margin-top:6px; border:1px solid #9aa0cc; background:#ecebfa; color:#6c4aa8; padding:5px 6px; font-size:11.5px; text-align:center; min-height:70px; }
+  .im-hint .opt { text-align:left; color:#1a4fa0; cursor:pointer; padding:1px 2px; font-size:11px; }
+  .im-hint .opt:hover { background:#d8d6f4; text-decoration:underline; }
+  .im-hint b { display:block; margin-bottom:3px; color:#1c1440; text-align:left; }
 </style>
 </head>
 <body>
@@ -1209,8 +1450,24 @@
       </div>
       <div class="pf-tabitem" onclick="alert('Consults — not implemented in this demo')">Consults</div>
       <div class="pf-tabitem" onclick="openLabView()">Laboratory</div>
-      <div class="pf-tabitem" onclick="alert('Procedure — not implemented in this demo')">Procedure ▾</div>
-      <div class="pf-tabitem" onclick="alert('Medicine — not implemented in this demo')">Medicine</div>
+      <div class="pf-tabitem-wrap">
+        <div class="pf-tabitem" onclick="toggleDropdown('procedureDropdown', event)">Procedure ▾</div>
+        <div class="summary-dropdown" id="procedureDropdown">
+          <div class="summary-dd-item" style="font-weight:bold;" onclick="selectProcedureItem('Imaging Request')">Imaging Request</div>
+          <div class="summary-dd-item" onclick="selectProcedureItem('Respiratory Procedures')">Respiratory Procedures</div>
+        </div>
+      </div>
+      <div class="pf-tabitem-wrap">
+        <div class="pf-tabitem" onclick="toggleDropdown('medicineDropdown', event)">Medicine ▾</div>
+        <div class="summary-dropdown" id="medicineDropdown">
+          <div class="summary-dd-item" onclick="selectMedicineItem('Clinical Pharmacist Approval')">Clinical Pharmacist Appro...</div>
+          <div class="summary-dd-item" onclick="selectMedicineItem('Medicine Administration')">Medicine Administration</div>
+          <div class="summary-dd-item" onclick="selectMedicineItem('Medicine Administration View')">Medicine Administration View</div>
+          <div class="summary-dd-item" onclick="selectMedicineItem('Medicine History')">Medicine History</div>
+          <div class="summary-dd-item" onclick="selectMedicineItem('Evidence Based Medication')">Evidence Based Medication</div>
+          <div class="summary-dd-item" onclick="selectMedicineItem('Micro Medex')">Micro Medex</div>
+        </div>
+      </div>
       <div class="pf-tabitem" onclick="alert('Schedule — not implemented in this demo')">Schedule ▾</div>
       <div class="pf-tabitem-wrap">
         <div class="pf-tabitem" onclick="toggleDropdown('readingsDropdown', event)">Readings ▾</div>
@@ -1660,6 +1917,318 @@
       </div>
     </div>
 
+    <div class="pf-view pf-imaging-view" id="view-imaging">
+      <div class="im-wrap">
+        <div class="im-main">
+          <div class="im-filter">
+            <b>Filter Procedure Type:</b>
+            <input type="text" id="imFilter" placeholder="">
+            <span class="im-chip"><i style="background:#fff;border:1px solid #888"></i>Pending Out Refl</span>
+            <span class="im-chip"><i style="background:#e8e8c0"></i>Done Outside</span>
+            <span class="im-chip"><i style="background:#f0a040"></i>Urgent</span>
+            <span class="im-chip"><i style="background:#d9302c"></i>Emergency</span>
+            <span class="im-chip"><i style="background:#b9d9b9"></i>OT/Mobile</span>
+            <span class="im-chip"><i style="background:#c0392b"></i>Consent Form Not Filled</span>
+          </div>
+          <div class="im-top">
+            <div class="im-table">
+              <div class="im-cols im-thead">
+                <div style="color:#ffb0b0;font-style:italic">R</div><div>Entry Time</div><div>Procedure</div><div>Cost</div><div>Priority</div><div>P</div><div>Status</div><div>Out side</div><div>AppDate</div><div>✉</div><div></div>
+              </div>
+              <div class="im-tbody" id="imRows"></div>
+            </div>
+            <div class="im-short">
+              <div class="im-short-h"><span>ShortList:</span>
+                <label><input type="radio" name="imShortRadio" value="my"> My</label>
+                <label><input type="radio" name="imShortRadio" value="dept"> Dept</label>
+                <label><input type="radio" name="imShortRadio" value="system" checked> System</label>
+              </div>
+              <div class="im-short-l" id="imShortList"></div>
+            </div>
+          </div>
+          <div class="im-msg" id="imMsg"></div>
+          <div class="im-tabs">
+            <div class="im-tab active" onclick="imTab(this,'Request Details')">Request Details</div>
+            <div class="im-tab" onclick="imTab(this,'Report')">Report</div>
+            <div class="im-tab" onclick="imTab(this,'Appointment')">Appointment</div>
+            <div class="im-tab" onclick="imTab(this,'Search')">Search</div>
+            <div class="im-tab" onclick="imTab(this,'External Referal')">External Referal</div>
+            <div class="im-tab" onclick="imTab(this,'Lab Alert')">Lab Alert</div>
+            <div class="im-tab" onclick="imTab(this,'Help')">Help</div>
+            <div class="im-tab" onclick="imTab(this,'Img. Notes')">Img. Notes</div>
+          </div>
+          <div class="im-panel">
+            <div id="imTabOther" style="display:none; padding:40px; text-align:center; color:#888; font-style:italic;"></div>
+            <div class="im-det" id="imTabRequest">
+              <div class="im-det-l">
+                <div class="im-two">
+                  <div><span class="im-lbl">Justification Reason</span><textarea id="imJust"></textarea></div>
+                  <div><span class="im-lbl">Clinical Details</span><textarea id="imClin"></textarea></div>
+                </div>
+                <div class="im-box">
+                  <div style="flex:1;">
+                    <div class="im-fieldrow"><span class="im-lbl">Preferred Date</span><input type="text" id="imPref"></div>
+                    <div class="im-fieldrow"><span class="im-lbl">Last Reported Time</span><input type="text" id="imLastRep"></div>
+                    <div class="im-fieldrow"><span class="im-lbl">Last Requested Time</span><input type="text" id="imLastReq"></div>
+                  </div>
+                  <div style="flex:1;"><span class="im-lbl">Views Selected</span><textarea id="imViews" style="height:70px;"></textarea></div>
+                </div>
+                <div class="im-two">
+                  <div><span class="im-lbl">Entry By</span><input type="text" id="imEntryBy" style="width:100%"></div>
+                  <div><span class="im-lbl">Request By</span><input type="text" id="imReqBy" style="width:100%"></div>
+                </div>
+                <div class="im-two" style="margin-bottom:0;">
+                  <div class="im-fieldrow"><span class="im-lbl" style="min-width:70px;">Accession.No</span><input type="text" id="imAcc"></div>
+                  <div class="im-fieldrow"><span class="im-lbl" style="min-width:60px;">Study UID</span><input type="text" id="imUid"></div>
+                </div>
+              </div>
+              <div class="im-det-r">
+                <div class="im-q"><span class="im-lbl">Side</span><label style="color:#999"><input type="radio" name="imSide" disabled> Left</label><label style="color:#999"><input type="radio" name="imSide" disabled> Right</label><label style="color:#999"><input type="radio" name="imSide" disabled> Bilateral</label></div>
+                <div class="im-q"><span class="im-lbl" style="min-width:50px;">In OT?</span><label><input type="radio" name="imOT"> Yes</label><label><input type="radio" name="imOT" checked> No</label><span class="im-lbl" style="min-width:36px;">Room</span><input type="text" style="flex:1;min-width:0;"></div>
+                <div class="im-q" style="justify-content:flex-end;"><span class="im-lbl" style="min-width:90px;">Anaesthesia Type</span><input type="text" style="width:55%;"></div>
+                <div class="im-q"><div style="flex:1;"><span class="im-lbl">Mobile Unit Required?</span><label><input type="radio" name="imMob" checked> Yes</label> <label><input type="radio" name="imMob"> No</label></div><div style="flex:1;"><span class="im-lbl">Histopathology Required?</span><label><input type="radio" name="imHis"> Yes</label> <label><input type="radio" name="imHis"> No</label></div></div>
+                <div class="im-q"><div style="flex:1;"><span class="im-lbl">With Contrast?</span><label><input type="radio" name="imCon"> Yes</label> <label><input type="radio" name="imCon" checked> No</label></div><div style="flex:1;"><span class="im-lbl">Consent Required?</span><label><input type="radio" name="imCns"> Yes</label> <label><input type="radio" name="imCns" checked> No</label></div></div>
+                <div class="im-lmp">
+                  <b>LMP</b>
+                  <div class="im-fieldrow" style="margin-top:3px;"><span class="im-lbl" style="min-width:60px;">Start Date</span><input type="text" style="max-width:90px;"><span class="im-lbl" style="min-width:50px;">Pregnant</span><select style="font-size:11px;"><option></option><option>Yes</option><option>No</option></select></div>
+                  <div class="im-fieldrow"><span class="im-lbl" style="min-width:150px;">Reason (If LMP not known)</span><select style="font-size:11px;"><option></option></select></div>
+                  <span class="im-lbl">If Others Plz Specify</span><input type="text" style="width:100%;box-sizing:border-box;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="im-bar">
+            <span class="im-btn" onclick="imMsg('History — not built yet')">History</span>
+            <span class="im-btn" onclick="imMsg('Profile — not built yet')">Profile</span>
+            <span class="im-btn" onclick="imDuplicate()">Duplicate</span>
+            <span class="im-btn" onclick="imMsg('Pend Auth — not built yet')">Pend Auth</span>
+            <span class="im-btn" onclick="imMsg('Worklist — not built yet')">Worklist</span>
+            <span class="im-btn" onclick="imMsg('Message — not built yet')">Message</span>
+            <span class="im-btn dis">Add Report</span>
+            <span class="im-btn" onclick="imMsg('Consent Form — not built yet')">Consent Form</span>
+            <span class="im-btn" onclick="imMsg('External Referal — not built yet')">External Referal</span>
+            <span class="im-btn" onclick="imMsg('Print Ext Ref — not built yet')">Print Ext Ref</span>
+          </div>
+          <div class="im-bar" style="border-top:none;margin-top:0;align-items:center;">
+            <input type="text" value="IBIH58716" style="width:90px;">
+            <select style="width:80px;"><option></option></select>
+            <select style="width:110px;"><option></option></select>
+            <span class="im-btn" onclick="imMsg('Image — not built yet')">Image</span>
+            <span class="im-btn" onclick="imMsg('Proc Instruction — not built yet')">Proc Instruction</span>
+            <span class="im-btn" onclick="imMsg('Presentation — not built yet')">Presentation</span>
+            <span class="im-btn dis">View Checklist</span>
+            <span class="im-btn" onclick="imMsg('Attach — not built yet')">Attach</span>
+            <span class="im-btn" onclick="imRender(); imMsg('Refreshed')">Refresh</span>
+          </div>
+        </div>
+        <div class="im-side">
+          <h4>Plain X-Rays</h4>
+          <div class="im-body" id="imBody"><span class="im-rl" style="left:10px;">R</span><span class="im-rl" style="right:10px;">L</span></div>
+          <div class="im-hint" id="imHint">Click on required portion of Body to show list of Plain X-Rays that can be requested.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf-view pf-io-view" id="view-io">
+      <div class="io-wrap">
+        <div class="io-top">
+          <span><b>Day :</b>
+            <select id="ioDay"><option>04/10/2026</option><option>03/10/2026</option><option>02/10/2026</option></select>
+          </span>
+          <div class="io-shifts">
+            <label><input type="radio" name="ioShift" value="0" checked> 7am-2pm</label>
+            <label><input type="radio" name="ioShift" value="1"> 3pm-10pm</label>
+            <label><input type="radio" name="ioShift" value="2"> 11pm-6am</label>
+          </div>
+        </div>
+        <div class="io-tabs">
+          <div class="io-tab active" id="ioTabIntake" onclick="ioSetTab('intake')">Intake</div>
+          <div class="io-tab" id="ioTabOutput" onclick="ioSetTab('output')">Output</div>
+        </div>
+        <div class="io-grid" id="ioGrid"></div>
+        <div class="io-footwrap">
+          <div class="io-foot"><div>Hourly Total</div><div class="ioh"></div><div class="ioh"></div><div class="ioh"></div><div class="ioh"></div><div class="ioh"></div><div class="ioh"></div><div class="ioh"></div><div class="ioh"></div><div></div></div>
+          <div class="io-foot"><div>Cumulative Total</div><div class="ioc"></div><div class="ioc"></div><div class="ioc"></div><div class="ioc"></div><div class="ioc"></div><div class="ioc"></div><div class="ioc"></div><div class="ioc"></div><div></div></div>
+        </div>
+        <div class="io-bottom">
+          <div class="io-entered"><span>Entered By :</span><input type="text"></div>
+          <div class="io-summary">
+            <span>Total Intake in ml.</span><span class="v" id="ioTotIn">0.00</span>
+            <span>Total Output in ml.</span><span class="v" id="ioTotOut">0.00</span>
+            <span>Balance in ml.</span><span class="v" id="ioBal">0.00</span>
+          </div>
+        </div>
+        <div class="io-legend">
+          <span>■ Internal Referral Exists</span><span>■ Internal Referral Replied</span><span>■ Discharge is proposed</span><span>■ Out On Pass</span><span>■ Proposed for Transfer</span><span>■ Scheduled for Surgery</span><span>■ Bed Reserved for OT patient</span><span>■ Locked patient File</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf-view pf-medadmin-view" id="view-medadmin">
+      <div class="ma-topbar">
+        <span class="ma-title">Medicine Administration</span>
+      </div>
+      <div class="ma-note">Presss F8 key if barcode scanner is not reading.</div>
+      <div class="ma-actionbar">
+        <div class="ma-abtn" onclick="alert('Searching…')">🔍 Search</div>
+        <div class="ma-abtn" onclick="alert('Cleared')">✕ Clear</div>
+        <div class="ma-abtn" onclick="alert('Saved')">💾 Save</div>
+        <div class="ma-abtn" onclick="alert('Verified')">✔ Verify</div>
+        <div class="ma-abtn" onclick="alert('Printing…')">🖨 Print</div>
+        <div class="ma-abtn" onclick="activateView('view-patientSummary')">✕ Close</div>
+      </div>
+
+      <div class="ma-idrow">
+        <span class="lbl">Patient Id</span>
+        <span>00000</span>
+        <span class="pname">Patient Name, Male, 76 Year(s)(Dob:01/01/1949), Omani</span>
+        <span class="spacer"></span>
+        <span class="lbl">Ward</span>
+        <span class="ward">MALE MEDICAL WARD</span>
+      </div>
+
+      <div class="ma-tabs">
+        <div class="ma-tab active">Normal Prescription</div>
+        <div class="ma-tab" onclick="alert('Infusion tab — not implemented in this demo')">Infusion</div>
+      </div>
+      <div class="ma-hourrow" id="maHourRow"></div>
+
+      <div class="ma-body">
+        <div class="ma-left">
+          <div class="ma-prescription-hdr">
+            <span>Prescription</span>
+            <span class="flag">Infusion Found</span>
+            <span class="chk"><input type="checkbox" checked> Show Only Active Medicine</span>
+          </div>
+          <div class="ma-presc-table-header">
+            <div class="cell" style="width:46%;">Medicine</div>
+            <div class="cell" style="width:10%;"></div>
+            <div class="cell" style="flex:1;">Next Admin Time</div>
+          </div>
+          <div class="ma-presc-body" id="maPrescRows"></div>
+
+          <div class="ma-bottom-form">
+            <div class="row"><span class="lbl">Start Date</span><span>09/03/2025 12:48</span>&nbsp;&nbsp;<span class="lbl">Prescribed By</span><span>FATHALRAHMAN ABDULGADIR MOHAMED</span></div>
+            <div class="row"><span class="lbl">Doctor Note :</span><input type="text"></div>
+            <div class="row"><span class="lbl">Ph. Comment</span><input type="text"><span class="qty">Qty Issued : 6</span></div>
+          </div>
+
+          <div class="ma-standing-hdr">Standing Order</div>
+          <div class="ma-standing-body">No standing order medicine</div>
+
+          <div class="ma-legend">
+            <span class="s-stop">* S - Stopped</span>
+            <span>Hold</span>
+            <span>Oncology</span>
+            <span>High Alert Medication</span>
+            <span class="s-allergy">* E - Allergy</span>
+            <span>Validity For 24 Hrs</span>
+            <span>Prescribed from other institutes</span>
+          </div>
+        </div>
+
+        <div class="ma-right">
+          <div class="ma-admin-hdr"><span>Administration Details</span></div>
+          <div class="ma-admin-table-header">
+            <div class="cell" style="width:12%;">V</div>
+            <div class="cell" style="width:30%;">Given Time</div>
+            <div class="cell" style="width:20%;">Strength</div>
+            <div class="cell" style="width:14%;">Volume</div>
+            <div class="cell" style="flex:1;">Given By</div>
+          </div>
+          <div class="ma-admin-body" id="maAdminRows"></div>
+
+          <div class="ma-total-row">
+            <span>Total</span><span>13500 Mg</span><span>3 Vial</span>
+            <span class="spacer"></span>
+            <button onclick="alert('Opening Administration Summary…')">Administration Summary</button>
+          </div>
+
+          <div class="ma-detail-form">
+            <div class="row"><span class="lbl">Given Medicine</span><input type="text" value="Tazocin *Piperaci +Tazobactam Injection 4500Mg/1Vial" readonly></div>
+            <div class="row"><span class="lbl">Remarks</span><input type="text"></div>
+            <div class="row"><span class="lbl">Verified By</span><input type="text"></div>
+            <div class="row"><span class="lbl">Cancelled By</span><input type="text"></div>
+            <div class="row"><span class="lbl">Cancel Reason</span><input type="text"></div>
+            <div class="row"><span class="lbl">Reject Reason</span><input type="text"></div>
+            <div class="row"><span class="lbl">Reject Entry By</span><input type="text"></div>
+          </div>
+
+          <div class="ma-showadmin-row">
+            <span>Show Administration by :</span>
+            <label><input type="radio" name="maShowAdmin" checked> 24 Hrs</label>
+            <label><input type="radio" name="maShowAdmin"> 48 Hrs</label>
+            <label><input type="radio" name="maShowAdmin"> 72 Hrs</label>
+            <label><input type="radio" name="maShowAdmin"> All</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ MEDICINE ADMIN ENTRY POPUP ============ -->
+  <div class="ma-entry-modal" id="maEntryModal">
+    <div class="ma-entry-titlebar">
+      <span class="icon"></span>
+      <span class="ma-entry-medname" id="maEntryMedName">Medicine</span>
+      <div class="ma-entry-nav">
+        <span onclick="alert('Previous Medicine')">◀ Previous Medicine</span>
+        <span onclick="alert('Next Medicine')">Next Medicine ▶</span>
+        <label><input type="checkbox"> Custom</label>
+        <span class="ma-entry-close" onclick="closeMedAdminEntry()">✕</span>
+      </div>
+    </div>
+
+    <div class="ma-entry-hours-label">Select the hours from the list &nbsp; to proceed the admin</div>
+    <div class="ma-entry-hourgrid" id="maEntryHourGrid"></div>
+
+    <div class="ma-entry-sub-label">Select the medicine from the list and enter the required volume/strength.</div>
+    <div class="ma-entry-cat-row">
+      <span class="lbl">Category</span>
+      <select><option></option><option>Anticoagulant</option><option>Antibiotic</option></select>
+      <span class="filter-icon" title="Filter">⚲ Filter</span>
+    </div>
+
+    <div class="ma-entry-table-header">
+      <div class="cell" style="width:28%;">Medicine</div>
+      <div class="cell" style="width:12%;">Stock</div>
+      <div class="cell" style="width:14%;">Admin.Strength</div>
+      <div class="cell" style="width:10%;">Given</div>
+      <div class="cell" style="width:8%;">Unit</div>
+      <div class="cell" style="width:8%;">Qty</div>
+      <div class="cell" style="width:8%;">Unit</div>
+      <div class="cell" style="flex:1;">Wastage</div>
+    </div>
+    <div class="ma-entry-table-body" id="maEntryMedRow"></div>
+
+    <div class="ma-entry-footer-row">
+      <label><input type="checkbox"> Treat Balance As Wastage</label>
+      <span class="spacer"></span>
+      <span class="lbl">Total Admin</span>
+      <input type="text" style="width:70px;">
+    </div>
+    <div class="ma-entry-footer-row">
+      <span class="lbl">Given Strength</span>
+      <input type="text" style="width:100px;">
+      <span class="lbl">Given Volume</span>
+      <input type="text" style="width:100px;">
+    </div>
+    <div class="ma-entry-footer-row">
+      <span class="lbl">Given Time</span>
+      <input type="text" placeholder="DD/MM/YYYY HH24:MI" style="width:180px;">
+      <span class="spacer"></span>
+      <label><input type="checkbox"> Not Given</label>
+    </div>
+    <div class="ma-entry-footer-row">
+      <span class="lbl">Remarks</span>
+      <input type="text" style="flex:1;">
+    </div>
+
+    <div class="ma-entry-buttons">
+      <button class="save" onclick="saveMedAdminEntry()">Save &amp; Close(F3)</button>
+      <button onclick="closeMedAdminEntry()">Close</button>
+    </div>
   </div>
 
   <!-- ============ NURSING SBAR MODAL ============ -->
@@ -2069,6 +2638,151 @@
     document.getElementById('pnPlaceholderText').textContent = 'This would show the ' + name + ' summary.';
   }
 
+  /* Medicine dropdown */
+  function selectMedicineItem(name){
+    document.getElementById('medicineDropdown').classList.remove('open');
+    if(name === 'Medicine Administration'){
+      renderMedAdmin();
+      activateView('view-medadmin');
+    } else {
+      activateView('view-placeholder', name);
+    }
+  }
+
+  /* Medicine Administration view */
+  const maPrescriptionData = [
+    { name: "Low Molecular Weight Heparin Inj 4000Iu/Cartridge { 9,500 Iu/2.375 Cartridge - BID - 3 D }", nextAdmin: "10/03/2025 18:00", strength: "4000 Iu/Cartridge", stock: "48 Cartridge", hours: {"06":"9500","18":"9500"} },
+    { name: "Tazocin *Piperaci +Tazobactam Inj 4500Mg/Vial { 4,500 Mg/1 Vial - TID - 7 D }", nextAdmin: "10/03/2025 14:00" },
+    { name: "Frusemide Inj 10Mg/Ml { 20 Mg/2 Ml - BID - 5 D }", nextAdmin: "10/03/2025 18:00" },
+    { name: "Human Albumin Inj 50Ml/50Ml { 50 Ml/50 Ml - BID - 5 D }", nextAdmin: "10/03/2025 18:00" },
+    { name: "Fusidic Acid Crm 2%/Grams { 2 %/1 Grams - TID - 8 D }", nextAdmin: "", selected: true },
+    { name: "Atorvastatin Tab 40MgTablet { 40 Mg/1 Tablet - HS - 30 D }", nextAdmin: "09/03/2025 20:00" },
+    { name: "Chlorhexidine Mouth Wash 5Ml/5Ml { 5 Ml/5 Ml - QID - 30 D }", nextAdmin: "10/03/2025 12:00" },
+    { name: "Clonazepam Tab 2MgTablet { 1 Mg/0.5 Tablet - TID - 30 D }", nextAdmin: "10/03/2025 14:00" }
+  ];
+
+  const maAdminData = [
+    { time: "10/03/2025 06:19", strength: "4500 Mg", volume: "1 Vial", by: "MASOUD RASHID MASOUD AL-KALBANI" },
+    { time: "09/03/2025 18:04", strength: "4500 Mg", volume: "1 Vial", by: "MAZIN RASHID MUBARAK AL-JASSASI" },
+    { time: "10/03/2025 14:20", strength: "4500 Mg", volume: "1 Vial", by: "AMAAR KHALAF BATI AL FARSI" }
+  ];
+
+  const maHourCounts = { "07": 6, "12": 1, "15": 2, "18": 3, "21": 1, "23": 2 };
+
+  function renderMedAdmin(){
+    const hourWrap = document.getElementById('maHourRow');
+    if(hourWrap.dataset.rendered !== '1'){
+      hourWrap.innerHTML = '<div class="ma-hourcell all"><label><input type="radio" name="maHour" checked> All</label></div>';
+      for(let h=0; h<24; h++){
+        const hh = pad(h);
+        const cnt = maHourCounts[hh];
+        hourWrap.innerHTML += '<div class="ma-hourcell"><label><input type="radio" name="maHour">' + hh + '</label><input type="text" class="cnt-input" value="' + (cnt || '') + '"></div>';
+      }
+      hourWrap.dataset.rendered = '1';
+    }
+
+    const prescWrap = document.getElementById('maPrescRows');
+    if(prescWrap.dataset.rendered !== '1'){
+      prescWrap.innerHTML = '';
+      maPrescriptionData.forEach(m => {
+        const row = document.createElement('div');
+        row.className = 'ma-presc-row' + (m.selected ? ' selected' : '');
+        row.innerHTML =
+          '<div class="cell" style="width:46%;">' + m.name + '</div>' +
+          '<div class="cell plus-btn" style="width:10%;">+</div>' +
+          '<div class="cell" style="flex:1;">' + m.nextAdmin + '</div>';
+        row.querySelector('.plus-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openMedAdminEntry(m);
+        });
+        prescWrap.appendChild(row);
+      });
+      for(let i=0;i<3;i++){
+        const row = document.createElement('div');
+        row.className = 'ma-presc-row';
+        row.innerHTML = '<div class="cell" style="width:46%;"></div><div class="cell plus-btn" style="width:10%;">+</div><div class="cell" style="flex:1;"></div>';
+        row.querySelector('.plus-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openMedAdminEntry({ name: '(new medicine)' });
+        });
+        prescWrap.appendChild(row);
+      }
+      prescWrap.dataset.rendered = '1';
+    }
+
+    const adminWrap = document.getElementById('maAdminRows');
+    if(adminWrap.dataset.rendered !== '1'){
+      adminWrap.innerHTML = '';
+      maAdminData.forEach(a => {
+        const row = document.createElement('div');
+        row.className = 'ma-admin-row';
+        row.innerHTML =
+          '<div class="cell check" style="width:12%;">✔</div>' +
+          '<div class="cell" style="width:30%;">' + a.time + '</div>' +
+          '<div class="cell" style="width:20%;">' + a.strength + '</div>' +
+          '<div class="cell" style="width:14%;">' + a.volume + '</div>' +
+          '<div class="cell" style="flex:1;">' + a.by + '</div>';
+        adminWrap.appendChild(row);
+      });
+      for(let i=0;i<3;i++){
+        const row = document.createElement('div');
+        row.className = 'ma-admin-row';
+        row.innerHTML = '<div class="cell" style="width:12%;"></div><div class="cell" style="width:30%;"></div><div class="cell" style="width:20%;"></div><div class="cell" style="width:14%;"></div><div class="cell" style="flex:1;"></div>';
+        adminWrap.appendChild(row);
+      }
+      adminWrap.dataset.rendered = '1';
+    }
+  }
+
+  function openMedAdminEntry(med){
+    document.getElementById('maEntryMedName').textContent = med.name || '(new medicine)';
+
+    // hour grid: two rows of 12 (00-11, 12-23); pre-fill dose under any hour the medicine specifies
+    const hourWrap = document.getElementById('maEntryHourGrid');
+    hourWrap.innerHTML = '';
+    const hours = med.hours || {};
+    for(let h=0; h<24; h++){
+      const hh = pad(h);
+      const dose = hours[hh];
+      const cell = document.createElement('div');
+      cell.className = 'ma-entry-hour' + (dose ? ' selected' : '');
+      cell.innerHTML = '<label><input type="checkbox"' + (dose ? ' checked' : '') + '>' + hh + '</label><input type="text" class="dose-input" value="' + (dose || '') + '"' + (dose ? '' : ' disabled') + '>';
+      const chk = cell.querySelector('input[type=checkbox]');
+      const doseInp = cell.querySelector('.dose-input');
+      chk.addEventListener('change', () => {
+        cell.classList.toggle('selected', chk.checked);
+        doseInp.disabled = !chk.checked;
+        if(chk.checked) doseInp.focus();
+      });
+      hourWrap.appendChild(cell);
+    }
+
+    // medicine row, pre-filled where we have data, editable for the rest
+    const rowWrap = document.getElementById('maEntryMedRow');
+    rowWrap.innerHTML =
+      '<div class="ma-entry-row">' +
+        '<div class="cell" style="width:28%;">' + (med.name || '') + '</div>' +
+        '<div class="cell" style="width:12%;">' + (med.stock || '') + '</div>' +
+        '<div class="cell" style="width:14%;">' + (med.strength || '') + '</div>' +
+        '<div class="cell" style="width:10%;"><input type="text"></div>' +
+        '<div class="cell" style="width:8%;"><input type="text"></div>' +
+        '<div class="cell" style="width:8%;"><input type="text"></div>' +
+        '<div class="cell" style="width:8%;"><input type="text"></div>' +
+        '<div class="cell" style="flex:1;"><input type="text"></div>' +
+      '</div>';
+
+    document.getElementById('maEntryModal').classList.add('open');
+  }
+
+  function closeMedAdminEntry(){
+    document.getElementById('maEntryModal').classList.remove('open');
+  }
+
+  function saveMedAdminEntry(){
+    alert('Administration entry saved.');
+    closeMedAdminEntry();
+  }
+
   function selectNotesItem(name){
     document.getElementById('notesDropdown').classList.remove('open');
     if(name === 'Kardex'){
@@ -2425,11 +3139,309 @@
     document.getElementById('diabModal').classList.remove('open');
   }
 
+
+  /* Intake-Output */
+  const ioShiftHours = [
+    ['07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00'],
+    ['15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00'],
+    ['23:00','00:00','01:00','02:00','03:00','04:00','05:00','06:00']
+  ];
+  function ioBlank(){ return ['','','','','','','','']; }
+  function ioMk(name, a, b, c){ return { name: name, vals: [a || ioBlank(), b || ioBlank(), c || ioBlank()] }; }
+  const ioState = { tab:'intake', shift:0, built:false };
+  const ioData = {
+    intake: [
+      { title:'IV Fluid', rows:[ioMk(''),ioMk(''),ioMk(''),ioMk(''),ioMk('')] },
+      { title:'Blood Transfusion', rows:[ioMk(''),ioMk(''),ioMk('')] },
+      { title:'Other Intakes', canAdd:true, rows:[
+        ioMk('NGT Feeding', ['','','','380','','','380',''], ['','','','330','','','','330']),
+        ioMk('Oral Feeding'),
+        ioMk('Other', ['30','30','30','30','30','30','30','30'], ['40','40','40','40','40','40','30','30'], ['30','30','30','30','30','30','35','35']),
+        ioMk(''),ioMk(''),ioMk(''),ioMk(''),ioMk('')
+      ] }
+    ],
+    output: [
+      { title:null, rows:[
+        ioMk('Urine', ['','','','','','','400',''], ['','300','','','','','',''], ['','','','200','','','','']),
+        ioMk('Abdominal Discharge - I'), ioMk('Vomit'), ioMk('Aspiration'),
+        ioMk('Abdominal Discharge - II'), ioMk('Abdominal Discharge - III'), ioMk('Abdominal Discharge - IV'),
+        ioMk('Chest Drainage - III'), ioMk('NGT Aspiration - Vomitting'),
+        ioMk('Redivac Drainage - I'), ioMk('Redivac Drainage - II'), ioMk('Redivac Drainage - IV'),
+        ioMk('Diarhea'), ioMk('Melena'), ioMk('Ureteric Catheter')
+      ] }
+    ]
+  };
+  let ioRefs = null;
+
+  function ioNum(v){ const n = parseFloat(v); return isNaN(n) ? 0 : n; }
+  function ioFmt2(n){ return n === 0 ? '.00' : n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+  function ioFmt0(n){ return String(Math.round(n*100)/100); }
+  function ioRowTotal(r){ let t = 0; r.vals.forEach(a => a.forEach(v => t += ioNum(v))); return t; }
+  function ioSecTotal(sec){ let t = 0; sec.rows.forEach(r => t += ioRowTotal(r)); return t; }
+  function ioGroupTotal(list){ let t = 0; list.forEach(sec => t += ioSecTotal(sec)); return t; }
+
+  function ioUpdateTotals(){
+    const secs = ioData[ioState.tab];
+    const sh = ioState.shift;
+    const hr = [0,0,0,0,0,0,0,0];
+    secs.forEach((sec, si) => {
+      sec.rows.forEach((r, ri) => {
+        r.vals[sh].forEach((v, i) => { hr[i] += ioNum(v); });
+        if(ioRefs && ioRefs.secs[si]) ioRefs.secs[si].rows[ri].textContent = ioFmt0(ioRowTotal(r));
+      });
+      if(ioRefs && ioRefs.secs[si] && ioRefs.secs[si].tot) ioRefs.secs[si].tot.textContent = ioFmt0(ioSecTotal(sec));
+    });
+    let cum = 0;
+    document.querySelectorAll('#view-io .ioh').forEach((el, i) => { el.textContent = ioFmt2(hr[i]); });
+    document.querySelectorAll('#view-io .ioc').forEach((el, i) => { cum += hr[i]; el.textContent = ioFmt2(cum); });
+    const tin = ioGroupTotal(ioData.intake), tout = ioGroupTotal(ioData.output);
+    document.getElementById('ioTotIn').textContent = ioFmt2(tin);
+    document.getElementById('ioTotOut').textContent = ioFmt2(tout);
+    document.getElementById('ioBal').textContent = ioFmt2(tin - tout);
+  }
+
+  function ioRender(){
+    const grid = document.getElementById('ioGrid');
+    const secs = ioData[ioState.tab];
+    const sh = ioState.shift;
+    grid.innerHTML = '';
+    ioRefs = { secs: [] };
+
+    const head = document.createElement('div');
+    head.className = 'io-head';
+    head.innerHTML = '<div>Parameter</div>' + ioShiftHours[sh].map(h => '<div>' + h + '</div>').join('') + '<div>Day Total</div>';
+    grid.appendChild(head);
+
+    secs.forEach((sec, si) => {
+      const ref = { rows: [], tot: null };
+      ioRefs.secs.push(ref);
+      if(sec.title){
+        const bar = document.createElement('div');
+        bar.className = 'io-sec';
+        bar.innerHTML = '<span>' + sec.title + '</span><span>' + (sec.canAdd ? '<button title="Add row">+</button> ' : '') + 'Day Total <b></b></span>';
+        ref.tot = bar.querySelector('b');
+        if(sec.canAdd){
+          bar.querySelector('button').addEventListener('click', () => { sec.rows.push(ioMk('')); ioRender(); });
+        }
+        grid.appendChild(bar);
+      }
+      sec.rows.forEach((r, ri) => {
+        const row = document.createElement('div');
+        row.className = 'io-row';
+        const nameInp = document.createElement('input');
+        nameInp.type = 'text'; nameInp.className = 'io-nameinp'; nameInp.value = r.name;
+        nameInp.addEventListener('input', () => { r.name = nameInp.value; });
+        row.appendChild(nameInp);
+        for(let i = 0; i < 8; i++){
+          const inp = document.createElement('input');
+          inp.type = 'text'; inp.value = r.vals[sh][i];
+          inp.addEventListener('input', () => { r.vals[sh][i] = inp.value; ioUpdateTotals(); });
+          row.appendChild(inp);
+        }
+        const dt = document.createElement('div');
+        dt.className = 'io-dt';
+        ref.rows.push(dt);
+        row.appendChild(dt);
+        grid.appendChild(row);
+      });
+    });
+    ioUpdateTotals();
+  }
+
+  function ioSetTab(tab){
+    ioState.tab = tab;
+    document.getElementById('ioTabIntake').classList.toggle('active', tab === 'intake');
+    document.getElementById('ioTabOutput').classList.toggle('active', tab === 'output');
+    ioRender();
+  }
+
+  function renderIO(){
+    if(!ioState.built){
+      document.querySelectorAll('input[name=ioShift]').forEach(r => {
+        r.addEventListener('change', () => { ioState.shift = Number(r.value); ioRender(); });
+      });
+      ioState.built = true;
+    }
+    ioRender();
+  }
+
+
+  /* Imaging Request */
+  const imRowsData = [
+    {entry:'06-04-2025 09:56', proc:'CHEST X-RAY', cost:8, priority:'Routine', status:'Pending', outside:false, just:'for f/u', clin:'septic shock', pref:'06/04/2025', lastRep:'17-09-2019 09:15', lastReq:'06-04-2025 09:56', views:'A.P.', entryBy:'MANASA KOTTHAPALLI', reqBy:'MANASA KOTTHAPALLI', acc:'1392263', uid:'400025001392337'},
+    {entry:'05-04-2025 06:59', proc:'VENOUS DOPPLER U LIMB', cost:25, priority:'Routine', status:'Reported', outside:false, just:'r/o DVT', clin:'swelling of upper limb', pref:'05/04/2025', lastRep:'', lastReq:'05-04-2025 06:59', views:'', entryBy:'MANASA KOTTHAPALLI', reqBy:'MANASA KOTTHAPALLI', acc:'1391870', uid:'400025001391850'},
+    {entry:'05-04-2025 06:59', proc:'VENOUS DOPPLER L LIMB', cost:25, priority:'Routine', status:'Reported', outside:false, just:'r/o DVT', clin:'swelling of lower limb', pref:'05/04/2025', lastRep:'', lastReq:'05-04-2025 06:59', views:'', entryBy:'MANASA KOTTHAPALLI', reqBy:'MANASA KOTTHAPALLI', acc:'1391871', uid:'400025001391851'},
+    {entry:'04-04-2025 22:34', proc:'KIDNEY URETER & BLADDER US', cost:25, priority:'Routine', status:'Reported', outside:false, just:'AKI work up', clin:'oliguria, raised creatinine', pref:'04/04/2025', lastRep:'', lastReq:'04-04-2025 22:34', views:'', entryBy:'MANASA KOTTHAPALLI', reqBy:'MANASA KOTTHAPALLI', acc:'1391622', uid:'400025001391602'},
+    {entry:'04-04-2025 20:01', proc:'CHEST X-RAY', cost:8, priority:'Routine', status:'Done', outside:false, just:'post intubation', clin:'septic shock', pref:'04/04/2025', lastRep:'', lastReq:'04-04-2025 20:01', views:'A.P.', entryBy:'MANASA KOTTHAPALLI', reqBy:'MANASA KOTTHAPALLI', acc:'1391590', uid:'400025001391570'},
+    {entry:'04-04-2025 18:25', proc:'ECG', cost:8, priority:'Routine', status:'Done', outside:false, just:'chest pain', clin:'septic shock', pref:'04/04/2025', lastRep:'', lastReq:'04-04-2025 18:25', views:'', entryBy:'MANASA KOTTHAPALLI', reqBy:'MANASA KOTTHAPALLI', acc:'1391561', uid:'400025001391541'}
+  ];
+  const imState = { sel: imRowsData[0], built: false, shortlist: 'system' };
+  const imShort = {
+    my: ['CHEST X-RAY','ECG'],
+    dept: ['CHEST X-RAY','ECG','ABDOMEN X-RAY ERECT','KIDNEY URETER & BLADDER US','CT BRAIN PLAIN'],
+    system: ['CHEST X-RAY','ECG','ABDOMEN X-RAY ERECT','ABDOMEN X-RAY SUPINE','KIDNEY URETER & BLADDER US','VENOUS DOPPLER U LIMB','VENOUS DOPPLER L LIMB','CT BRAIN PLAIN','CT CHEST (HIGH RESOLUTION)','ECHO']
+  };
+  const imRegions = {
+    'Head':['SKULL AP/LAT','FACIAL BONES','PARANASAL SINUSES','MANDIBLE'],
+    'Neck':['C-SPINE AP/LAT','SOFT TISSUE NECK'],
+    'Chest':['CHEST X-RAY','RIBS','STERNUM','CLAVICLE'],
+    'Abdomen':['ABDOMEN X-RAY ERECT','ABDOMEN X-RAY SUPINE','KUB','LUMBAR SPINE AP/LAT'],
+    'Pelvis':['PELVIS AP','HIP JOINT'],
+    'Arm':['SHOULDER','HUMERUS','ELBOW','FOREARM','WRIST','HAND'],
+    'Leg':['FEMUR','KNEE','TIBIA/FIBULA','ANKLE','FOOT']
+  };
+
+  function imNow(){ const d = new Date(); return pad(d.getDate())+'-'+pad(d.getMonth()+1)+'-'+d.getFullYear()+' '+pad(d.getHours())+':'+pad(d.getMinutes()); }
+  function imToday(){ const d = new Date(); return pad(d.getDate())+'/'+pad(d.getMonth()+1)+'/'+d.getFullYear(); }
+  function imMsg(t){ document.getElementById('imMsg').textContent = t; }
+
+  function imAdd(proc){
+    const name = proc.toUpperCase();
+    const cost = (name.indexOf('US') > -1 || name.indexOf('DOPPLER') > -1 || name.indexOf('CT') === 0 || name.indexOf('ECHO') === 0) ? 25 : 8;
+    const row = {entry:imNow(), proc:name, cost:cost, priority:'Routine', status:'Pending', outside:false, just:'', clin:'', pref:imToday(), lastRep:'', lastReq:imNow(), views:'', entryBy:'IRENE FLORES', reqBy:'IRENE FLORES', acc:'', uid:''};
+    imRowsData.unshift(row);
+    imState.sel = row;
+    imRender();
+    imMsg(name + ' requested.');
+  }
+
+  function imDuplicate(){
+    if(!imState.sel){ imMsg('Select a request first.'); return; }
+    const c = Object.assign({}, imState.sel, {entry:imNow(), lastReq:imNow(), status:'Pending', acc:'', uid:''});
+    imRowsData.unshift(c);
+    imState.sel = c;
+    imRender();
+    imMsg(c.proc + ' duplicated.');
+  }
+
+  function imFill(){
+    const r = imState.sel || {};
+    const map = {imJust:'just', imClin:'clin', imPref:'pref', imLastRep:'lastRep', imLastReq:'lastReq', imViews:'views', imEntryBy:'entryBy', imReqBy:'reqBy', imAcc:'acc', imUid:'uid'};
+    Object.keys(map).forEach(id => { document.getElementById(id).value = r[map[id]] || ''; });
+  }
+
+  function imRender(){
+    const wrap = document.getElementById('imRows');
+    const f = document.getElementById('imFilter').value.trim().toLowerCase();
+    wrap.innerHTML = '';
+    imRowsData.forEach(r => {
+      if(f && r.proc.toLowerCase().indexOf(f) === -1) return;
+      const row = document.createElement('div');
+      row.className = 'im-cols im-tr' + (r === imState.sel ? ' sel' : '');
+      row.innerHTML = '<div></div><div>' + r.entry + '</div><div title="' + r.proc + '">' + r.proc + '</div><div>' + r.cost + '</div>' +
+        '<div><select><option>Routine</option><option>Urgent</option><option>Emergency</option></select></div>' +
+        '<div><input type="checkbox" checked disabled></div>' +
+        '<div>' + (r.status === 'Reported' ? '<a>Reported</a>' : r.status) + '</div>' +
+        '<div><input type="checkbox"></div><div></div><div><input type="checkbox"></div><div><button class="im-x" title="Remove">X</button></div>';
+      const sel = row.querySelector('select');
+      sel.value = r.priority;
+      sel.addEventListener('click', e => e.stopPropagation());
+      sel.addEventListener('change', () => { r.priority = sel.value; });
+      row.querySelectorAll('input[type=checkbox]').forEach(c => c.addEventListener('click', e => e.stopPropagation()));
+      row.querySelector('.im-x').addEventListener('click', e => {
+        e.stopPropagation();
+        const i = imRowsData.indexOf(r);
+        imRowsData.splice(i, 1);
+        if(imState.sel === r) imState.sel = imRowsData[0] || null;
+        imRender();
+      });
+      row.addEventListener('click', () => { imState.sel = r; imRender(); });
+      wrap.appendChild(row);
+    });
+    // blank row: type a procedure name and press Enter to request it
+    const blank = document.createElement('div');
+    blank.className = 'im-cols im-tr';
+    blank.innerHTML = '<div></div><div></div><div><input type="text" placeholder="type procedure + Enter"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>';
+    blank.querySelector('input').addEventListener('keydown', e => {
+      if(e.key === 'Enter' && e.target.value.trim()){ imAdd(e.target.value.trim()); }
+    });
+    wrap.appendChild(blank);
+    imFill();
+  }
+
+  function imRenderShort(){
+    const list = document.getElementById('imShortList');
+    list.innerHTML = '';
+    imShort[imState.shortlist].forEach(p => {
+      const d = document.createElement('div');
+      d.textContent = p;
+      d.addEventListener('click', () => imAdd(p));
+      list.appendChild(d);
+    });
+  }
+
+  function imTab(el, name){
+    document.querySelectorAll('#view-imaging .im-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    const other = document.getElementById('imTabOther');
+    const req = document.getElementById('imTabRequest');
+    if(name === 'Request Details'){ other.style.display = 'none'; req.style.display = 'flex'; }
+    else { req.style.display = 'none'; other.style.display = 'block'; other.textContent = name + ' — not built yet'; }
+  }
+
+  function imBuildBody(){
+    const host = document.getElementById('imBody');
+    if(host.querySelector('svg')) return;
+    let g = '';
+    g += '<ellipse cx="80" cy="28" rx="16" ry="20" fill="#f2f2ee" stroke="#555"/><path d="M68 44 Q80 54 92 44" fill="none" stroke="#555"/>';
+    g += '<line x1="80" y1="48" x2="80" y2="172" stroke="#666" stroke-width="5" stroke-dasharray="4 2"/>';
+    g += '<path d="M80 66 L52 62 M80 66 L108 62" stroke="#555" stroke-width="3" fill="none"/>';
+    for(let y = 76; y <= 128; y += 10){
+      g += '<path d="M80 ' + y + ' Q54 ' + (y+2) + ' 52 ' + (y+18) + ' M80 ' + y + ' Q106 ' + (y+2) + ' 108 ' + (y+18) + '" fill="none" stroke="#777" stroke-width="2"/>';
+    }
+    g += '<path d="M80 172 Q50 170 46 198 Q62 208 80 198 Q98 208 114 198 Q110 170 80 172Z" fill="#f2f2ee" stroke="#555"/>';
+    g += '<polyline points="52,64 38,128 30,186" fill="none" stroke="#666" stroke-width="5" stroke-linejoin="round"/><polyline points="108,64 122,128 130,186" fill="none" stroke="#666" stroke-width="5" stroke-linejoin="round"/>';
+    g += '<polyline points="62,198 60,262 58,324" fill="none" stroke="#666" stroke-width="6" stroke-linejoin="round"/><polyline points="98,198 100,262 102,324" fill="none" stroke="#666" stroke-width="6" stroke-linejoin="round"/>';
+    g += '<rect x="48" y="324" width="22" height="8" fill="#f2f2ee" stroke="#555"/><rect x="90" y="324" width="22" height="8" fill="#f2f2ee" stroke="#555"/>';
+    const reg = [['Head',60,6,40,40],['Neck',66,46,28,18],['Chest',46,62,68,62],['Abdomen',50,124,60,46],['Pelvis',44,170,72,40],['Arm',12,58,36,146],['Arm',112,58,36,146],['Leg',46,206,34,130],['Leg',80,206,34,130]];
+    reg.forEach(r => { g += '<rect class="reg" data-r="' + r[0] + '" x="' + r[1] + '" y="' + r[2] + '" width="' + r[3] + '" height="' + r[4] + '"><title>' + r[0] + '</title></rect>'; });
+    host.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 160 340" width="150" height="320">' + g + '</svg>');
+    host.querySelectorAll('.reg').forEach(el => el.addEventListener('click', () => imShowRegion(el.dataset.r)));
+  }
+
+  function imShowRegion(name){
+    const hint = document.getElementById('imHint');
+    hint.innerHTML = '<b>' + name + '</b>';
+    imRegions[name].forEach(p => {
+      const d = document.createElement('div');
+      d.className = 'opt';
+      d.textContent = p;
+      d.addEventListener('click', () => imAdd(p));
+      hint.appendChild(d);
+    });
+  }
+
+  function renderImaging(){
+    if(!imState.built){
+      document.getElementById('imFilter').addEventListener('input', imRender);
+      document.querySelectorAll('input[name=imShortRadio]').forEach(r => r.addEventListener('change', () => { imState.shortlist = r.value; imRenderShort(); }));
+      const bind = {imJust:'just', imClin:'clin', imPref:'pref', imLastRep:'lastRep', imLastReq:'lastReq', imViews:'views', imEntryBy:'entryBy', imReqBy:'reqBy', imAcc:'acc', imUid:'uid'};
+      Object.keys(bind).forEach(id => document.getElementById(id).addEventListener('input', e => { if(imState.sel) imState.sel[bind[id]] = e.target.value; }));
+      imBuildBody();
+      imRenderShort();
+      imState.built = true;
+    }
+    imRender();
+  }
+
+  function selectProcedureItem(name){
+    document.getElementById('procedureDropdown').classList.remove('open');
+    if(name === 'Imaging Request'){
+      renderImaging();
+      activateView('view-imaging');
+    } else {
+      activateView('view-placeholder', name);
+    }
+  }
+
   function selectReadingsItem(name){
     document.getElementById('readingsDropdown').classList.remove('open');
     if(name === 'Vital Signs/Anthopometry'){
       renderVitalSigns();
       activateView('view-vitalsigns');
+    } else if(name === 'Intake-Output'){
+      renderIO();
+      activateView('view-io');
     } else if(name === 'Diabetic Chart'){
       openDiabeticChart();
     } else {
