@@ -1120,6 +1120,89 @@
   .im-hint .opt { text-align:left; color:#1a4fa0; cursor:pointer; padding:1px 2px; font-size:11px; }
   .im-hint .opt:hover { background:#d8d6f4; text-decoration:underline; }
   .im-hint b { display:block; margin-bottom:3px; color:#1c1440; text-align:left; }
+
+  /* ================= BLOOD TRANSFUSION MONITORING POPUP ================= */
+  .tm-modal { display:none; position:absolute; top:14px; left:50px; width:880px; max-width:95%; background:#eef2f6; border:1px solid #5c6b8a; box-shadow:4px 6px 18px rgba(0,0,0,0.45); z-index:600; font-size:11.5px; }
+  .tm-modal.open { display:block; }
+  .tm-titlebar { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(to bottom,#fdfefe,#dfe8f0); border-bottom:1px solid #b9c6d4; padding:4px 8px; font-weight:bold; font-size:13px; color:#1f3a63; }
+  .tm-titlebar .icon { width:14px; height:14px; background:linear-gradient(135deg,#3b6ea5,#183a63); border-radius:3px; display:inline-block; margin-right:6px; vertical-align:middle; }
+  .tm-x { cursor:pointer; padding:0 8px; font-size:15px; color:#333; }
+  .tm-x:hover { background:#c0392b; color:#fff; }
+  .tm-toolbar { display:flex; align-items:center; gap:2px; padding:3px 8px; border-bottom:1px solid #b9c6d4; background:#f5f7fa; }
+  .tm-tbtn { font-size:11.5px; font-weight:600; color:#16324f; padding:3px 8px; cursor:pointer; border:1px solid transparent; }
+  .tm-tbtn:hover { background:#dcebf8; border-color:#a9b7c4; }
+  .tm-login { margin-left:14px; font-weight:600; color:#333; }
+  .tm-bigtitle { margin-left:auto; font-size:17px; font-weight:bold; font-style:italic; color:#b02a37; }
+  .tm-body { display:flex; gap:8px; padding:6px 8px; max-height:600px; overflow-y:auto; }
+  .tm-left { flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; }
+  .tm-right { width:236px; display:flex; flex-direction:column; gap:6px; }
+  .tm-patient { display:flex; align-items:center; gap:6px; }
+  .tm-patient input { font-size:11.5px; padding:2px 4px; border:1px solid #a9b7c4; background:#f7f9fb; }
+  .tm-box { border:1px solid #b9c6d4; background:#f5f5fb; padding:3px 6px 5px; position:relative; }
+  .tm-box > .tm-bt { font-weight:bold; font-size:11.5px; color:#333; margin-bottom:3px; }
+  .tm-grid { display:grid; grid-template-columns:repeat(5,1fr); }
+  .tm-th { background:#7d78c4; color:#fff; font-weight:bold; font-size:10.5px; }
+  .tm-th > div { padding:2px 4px; }
+  .tm-tr { border-bottom:1px solid #c9c6ee; background:#fff; cursor:pointer; font-size:11px; }
+  .tm-tr:hover { background:#eef1fb; }
+  .tm-tr.sel { background:#d3dcf3; }
+  .tm-tr.susp { color:#b03a3a; }
+  .tm-tr > div { padding:2px 4px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+  .tm-list { min-height:84px; max-height:96px; overflow-y:auto; border:1px solid #9aa0cc; }
+  .tm-f { display:grid; grid-template-columns:auto 1fr auto 1fr; gap:3px 6px; align-items:center; }
+  .tm-f label { font-weight:600; color:#333; text-align:right; white-space:nowrap; }
+  .tm-modal input[type=text], .tm-modal textarea { font-size:11.5px; padding:2px 4px; border:1px solid #a9b7c4; background:#fff; font-family:inherit; min-width:0; box-sizing:border-box; width:100%; }
+  .tm-modal textarea { resize:none; }
+  .tm-mini { width:100%; border-collapse:collapse; }
+  .tm-mini .tm-th { display:grid; }
+  .tm-mini .tm-row { display:grid; border-bottom:1px solid #d9d4ee; }
+  .tm-mini .tm-row input { border:none; border-right:1px solid #d9d4ee; background:#fff; padding:2px 3px; font-size:11px; }
+  .tm-mini .tm-btns { display:flex; gap:2px; justify-content:flex-end; }
+  .tm-mini .tm-btns span { cursor:pointer; font-weight:bold; padding:0 4px; background:#fff; color:#222; border:1px solid #9aa0cc; font-size:10.5px; }
+  .tm-flowwrap { display:flex; gap:8px; }
+  .tm-totals { width:190px; display:flex; flex-direction:column; gap:3px; font-weight:600; }
+  .tm-totals .row { display:flex; justify-content:space-between; align-items:center; gap:4px; }
+  .tm-totals .v { width:70px; text-align:right; background:#e9e9f5; border:1px solid #a9b7c4; padding:2px 4px; font-weight:bold; }
+  .tm-totals button { font-size:11px; padding:3px 6px; border:1px solid #a9b7c4; background:#eee; color:#999; }
+  .tm-legend { display:grid; grid-template-columns:22px 1fr; gap:3px 6px; align-items:center; font-weight:600; font-size:11.5px; }
+  .tm-legend i { display:block; width:20px; height:12px; }
+  .tm-create { font-size:12.5px; font-weight:bold; padding:4px 8px; border:1px solid #8a94a8; background:linear-gradient(to bottom,#f6f7fa,#dde3ea); cursor:pointer; }
+  .tm-create:hover { background:#cfe2f0; }
+  .tm-phead { background:#7d78c4; color:#fff; font-weight:bold; padding:2px 6px; font-size:11px; }
+  .tm-check { border:1px solid #b9c6d4; padding:4px 10px; background:#f5f5fb; }
+  .tm-check h5 { margin:0 0 4px; text-align:center; font-size:12px; }
+  .tm-check label { display:flex; justify-content:space-between; padding:3px 4px; font-weight:600; }
+  .tm-status { border-top:1px solid #b9c6d4; background:#eef2f6; padding:2px 8px; font-size:10.5px; color:#555; display:flex; justify-content:space-between; }
+
+  /* ================= TUBES / IV LINES POPUP ================= */
+  .tb-modal { display:none; position:absolute; top:14px; left:70px; width:800px; max-width:95%; background:#eef2f6; border:1px solid #5c6b8a; box-shadow:4px 6px 18px rgba(0,0,0,0.45); z-index:650; font-size:11.5px; }
+  .tb-modal.open { display:block; }
+  .tb-titlebar { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(to bottom,#fdfefe,#dfe8f0); border-bottom:1px solid #b9c6d4; padding:4px 8px; font-weight:bold; font-size:13px; color:#1f3a63; }
+  .tb-titlebar .icon { width:14px; height:14px; background:linear-gradient(135deg,#3b6ea5,#183a63); border-radius:3px; display:inline-block; margin-right:6px; vertical-align:middle; }
+  .tb-x { cursor:pointer; padding:0 8px; font-size:15px; color:#333; }
+  .tb-x:hover { background:#c0392b; color:#fff; }
+  .tb-toolbar { display:flex; align-items:center; gap:2px; padding:3px 8px; border-bottom:1px solid #b9c6d4; background:#f5f7fa; }
+  .tb-pname { color:#d9531e; font-weight:bold; font-size:12px; margin-right:auto; }
+  .tb-tbtn { font-size:11.5px; font-weight:600; color:#16324f; padding:3px 8px; cursor:pointer; border:1px solid transparent; }
+  .tb-tbtn:hover { background:#dcebf8; border-color:#a9b7c4; }
+  .tb-dayrow { padding:6px 10px 3px; display:flex; align-items:center; gap:6px; font-weight:600; color:#444; }
+  .tb-dayrow select { font-size:11.5px; padding:1px 3px; min-width:110px; }
+  .tb-wrap { margin:0 10px; border:1px solid #5a55b5; background:#e6e6f8; }
+  .tb-cols { display:grid; grid-template-columns:1.3fr .8fr 1.2fr 1.3fr 1.2fr 2fr 56px; }
+  .tb-head { background:#5a55b5; color:#fff; font-size:11px; }
+  .tb-head > div { padding:3px 5px; }
+  .tb-btns { display:flex; gap:2px; justify-content:flex-end; align-items:center; }
+  .tb-btns span { cursor:pointer; font-weight:bold; padding:0 6px; background:#fff; color:#111; border:1px solid #8a86cc; font-size:12px; line-height:16px; }
+  .tb-btns span:hover { background:#dcebf8; }
+  .tb-body { max-height:290px; overflow-y:auto; }
+  .tb-row { border-bottom:1px solid #6a67c8; }
+  .tb-row input { border:none; border-right:1px solid #6a67c8; background:transparent; padding:3px 5px; font-size:11.5px; font-family:inherit; width:100%; min-width:0; box-sizing:border-box; height:22px; }
+  .tb-row input:focus { outline:1px solid #3b3ab0; background:#fff; }
+  .tb-row.sel { background:#c4c4d8; }
+  .tb-row.removed input { text-decoration:line-through; color:#222; }
+  .tb-foot { display:flex; align-items:center; justify-content:flex-end; gap:6px; padding:6px 10px; font-weight:600; }
+  .tb-foot input { width:300px; font-size:11.5px; padding:2px 4px; border:1px solid #a9b7c4; background:#fff; }
+  .tb-status { border-top:1px solid #b9c6d4; padding:2px 8px; font-size:10.5px; color:#555; min-height:16px; }
 </style>
 </head>
 <body>
@@ -1449,12 +1532,21 @@
         </div>
       </div>
       <div class="pf-tabitem" onclick="alert('Consults — not implemented in this demo')">Consults</div>
-      <div class="pf-tabitem" onclick="openLabView()">Laboratory</div>
+      <div class="pf-tabitem-wrap">
+        <div class="pf-tabitem" onclick="toggleDropdown('labDropdown', event)">Laboratory ▾</div>
+        <div class="summary-dropdown" id="labDropdown">
+          <div class="summary-dd-item" onclick="selectLabItem('Blood transfusion/Request')">Blood transfusion/Request</div>
+          <div class="summary-dd-item" onclick="selectLabItem('Transfusion Monitoring')">Transfusion Monitoring</div>
+          <div class="summary-dd-item" onclick="selectLabItem('Lab History')">Lab History</div>
+          <div class="summary-dd-item" onclick="selectLabItem('Lab Request')">Lab Request</div>
+        </div>
+      </div>
       <div class="pf-tabitem-wrap">
         <div class="pf-tabitem" onclick="toggleDropdown('procedureDropdown', event)">Procedure ▾</div>
         <div class="summary-dropdown" id="procedureDropdown">
           <div class="summary-dd-item" style="font-weight:bold;" onclick="selectProcedureItem('Imaging Request')">Imaging Request</div>
           <div class="summary-dd-item" onclick="selectProcedureItem('Respiratory Procedures')">Respiratory Procedures</div>
+          <div class="summary-dd-item" onclick="selectProcedureItem('Nursing Procedures')">Nursing Procedures</div>
         </div>
       </div>
       <div class="pf-tabitem-wrap">
@@ -2165,6 +2257,134 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- ============ TUBES / IV LINES POPUP ============ -->
+  <div class="tb-modal" id="tbModal">
+    <div class="tb-titlebar"><span><span class="icon"></span>Tubes/IV Lines</span><span class="tb-x" onclick="closeTubesLines()">✕</span></div>
+    <div class="tb-toolbar">
+      <span class="tb-pname" id="tbPatientLine">Patient Name</span>
+      <span class="tb-tbtn" onclick="tbMsg('Printing…')">🖨 Print</span>
+      <span class="tb-tbtn" onclick="tbMsg('Saved')">💾 Save</span>
+      <span class="tb-tbtn" onclick="tbMsg('Saved'); closeTubesLines()">💾 Save &amp; Close</span>
+      <span class="tb-tbtn" onclick="closeTubesLines()">⌂ Close</span>
+    </div>
+    <div class="tb-dayrow"><span>Insertion Day :</span><select id="tbDay"></select></div>
+    <div class="tb-wrap">
+      <div class="tb-cols tb-head">
+        <div>Tube /Line</div><div>Size (cms)</div><div>Site</div><div>Insertion Date</div><div>Removed Date</div><div>Remarks</div>
+        <div class="tb-btns"><span title="Add a new line" onclick="tbAdd()">+</span><span title="Mark selected line removed / not removed" onclick="tbToggleRemoved()">X</span></div>
+      </div>
+      <div class="tb-body" id="tbRows"></div>
+    </div>
+    <datalist id="tbTubeList"><option value="NGT"><option value="Peripheral Line"><option value="FOLY'S CATHETER"><option value="Central Line"><option value="Arterial Line"><option value="Endotracheal Tube"><option value="Tracheostomy Tube"><option value="Chest Tube"><option value="Drain"></datalist>
+    <div class="tb-foot"><span>Entered By :</span><input type="text" value="IRENE FLORES"></div>
+    <div class="tb-status" id="tbNote"></div>
+  </div>
+
+  <!-- ============ BLOOD TRANSFUSION MONITORING POPUP ============ -->
+  <div class="tm-modal" id="tmModal">
+    <div class="tm-titlebar"><span><span class="icon"></span>Blood Transfusion Monitoring</span><span class="tm-x" onclick="closeTransfusionMonitoring()">✕</span></div>
+    <div class="tm-toolbar">
+      <span class="tm-tbtn" onclick="tmMsg('Saved')">💾 Save</span>
+      <span class="tm-tbtn" onclick="tmMsg('Saved'); closeTransfusionMonitoring()">💾 Save &amp; Close</span>
+      <span class="tm-tbtn" onclick="tmMsg('Printing…')">🖨 Print</span>
+      <span class="tm-tbtn" onclick="tmClear()">↺ Clear</span>
+      <span class="tm-tbtn" onclick="closeTransfusionMonitoring()">⌂ Close</span>
+      <span class="tm-login">Login By: MOH65437</span>
+      <span class="tm-bigtitle">Blood Transfusion Monitoring</span>
+    </div>
+    <div class="tm-body">
+      <div class="tm-left">
+        <div class="tm-patient">
+          <b>Patient ID</b><input type="text" value="00000" readonly style="width:90px;">
+          <input type="text" id="tmPatientLine" value="Patient Name, Male, 76 Year(s)(Dob:01/01/1949), Omani" readonly>
+        </div>
+
+        <div class="tm-box">
+          <div class="tm-bt">Transfusions</div>
+          <div class="tm-grid tm-th" style="grid-template-columns:1.1fr 1.6fr .8fr 1fr 1fr;"><div>Unit No.</div><div>Product Name</div><div>Group</div><div>Start Time</div><div>End Time</div></div>
+          <div class="tm-list" id="tmList"></div>
+        </div>
+
+        <div class="tm-box">
+          <div class="tm-bt">Unit Details</div>
+          <div class="tm-f" style="grid-template-columns:auto 1.2fr auto 2fr;">
+            <label>UnitNo</label><input type="text" data-tm="unit">
+            <label>Prod. Name</label><input type="text" data-tm="prod">
+          </div>
+          <div class="tm-f" style="grid-template-columns:auto 60px auto 80px auto 70px auto 1fr; margin-top:3px;">
+            <label>ABO Gr</label><input type="text" data-tm="abo">
+            <label>Rh</label><input type="text" data-tm="rh">
+            <label>Volume</label><input type="text" data-tm="volume">
+            <label>Expiry Dt</label><input type="text" data-tm="expiry">
+          </div>
+        </div>
+
+        <div class="tm-box">
+          <div class="tm-bt">Transfusion Details</div>
+          <div class="tm-f">
+            <label>Pre Trans. Temp</label><input type="text" data-tm="temp" style="max-width:90px;">
+            <label>Started By</label><input type="text" data-tm="startedBy">
+            <label>Pre Trans. Pulse</label><input type="text" data-tm="pulse" style="max-width:90px;">
+            <label>Stopped By</label><input type="text" data-tm="stoppedBy">
+            <label>Pre Trans. Resp.</label><input type="text" data-tm="resp" style="max-width:90px;">
+            <label>Checked By</label><input type="text" data-tm="checkedBy">
+            <label>Pre Trans. BP Systolic</label><input type="text" data-tm="sys" style="max-width:90px;">
+            <label>Transfusion Location</label><input type="text" data-tm="location">
+            <label>Pre Trans. BP Diastolic</label><input type="text" data-tm="dia" style="max-width:90px;">
+            <span></span><span></span>
+          </div>
+          <div class="tm-f" style="grid-template-columns:auto 1fr; margin-top:3px;">
+            <label>Remarks</label><input type="text" data-tm="remarks">
+          </div>
+          <div class="tm-f" style="grid-template-columns:auto auto auto 1fr; margin-top:3px;">
+            <label>Suspended?</label><input type="checkbox" data-tm="suspended">
+            <label>Suspension Reason</label><input type="text" data-tm="suspReason">
+          </div>
+        </div>
+
+        <div class="tm-flowwrap">
+          <div class="tm-box tm-mini" style="flex:1;">
+            <div class="tm-bt">Flow Details</div>
+            <div class="tm-th" style="display:grid;grid-template-columns:1.2fr 1.2fr .8fr 1fr 44px;"><div>Flow Start Time</div><div>Flow End Time</div><div>Flow (ml/hr)</div><div>Transfused Volume</div><div class="tm-btns"><span onclick="tmAdd('flows')">+</span><span onclick="tmRemove('flows')">X</span></div></div>
+            <div id="tmFlows" style="min-height:54px;"></div>
+          </div>
+          <div class="tm-totals">
+            <div class="row"><span>Reaction Suspected</span><input type="checkbox" data-tm="reactionSusp" style="width:auto;"></div>
+            <button disabled>Reaction Evaluation</button>
+            <div class="row"><span>Total Transfused vol (ml)</span><span class="v" id="tmTotal">0</span></div>
+            <div class="row"><span>Balance Volume (ml)</span><span class="v" id="tmBalance">0</span></div>
+          </div>
+        </div>
+
+        <div class="tm-flowwrap">
+          <div class="tm-box tm-mini" style="flex:1.3;">
+            <div class="tm-bt">Transfusion Monitoring</div>
+            <div class="tm-th" style="display:grid;grid-template-columns:1.5fr .7fr .7fr .7fr .7fr .7fr 44px;"><div>Monitoring Date</div><div>Temp</div><div>Pulse</div><div>Resp</div><div>Sys.BP</div><div>Dia.</div><div class="tm-btns"><span onclick="tmAdd('monitors')">+</span><span onclick="tmRemove('monitors')">X</span></div></div>
+            <div id="tmMonitors" style="min-height:54px;"></div>
+          </div>
+          <div class="tm-box tm-mini" style="flex:1;">
+            <div class="tm-th" style="display:flex;justify-content:space-between;"><div>Transfusion Reaction</div><div class="tm-btns"><span onclick="tmClearReactions()">X</span></div></div>
+            <div id="tmReactions" style="min-height:54px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-right">
+        <div class="tm-legend">
+          <i style="background:#222"></i><span>Normal</span>
+          <i style="background:#b03a3a"></i><span>Suspended</span>
+          <i style="background:#e0364a"></i><span>Reaction suspected</span>
+          <i style="background:#6a1f1f"></i><span>Reaction suspected &amp; Suspended</span>
+        </div>
+        <div class="tm-create" onclick="tmCreate()">Create Transfusion</div>
+        <div><div class="tm-phead">Pre, Mid Medication and Request/Transfusion Details</div><textarea data-tm="premid" style="height:64px;"></textarea></div>
+        <div><div class="tm-phead">Remarks to Nurses</div><textarea data-tm="nurse" style="height:90px;"></textarea></div>
+        <div class="tm-check" id="tmChecks"><h5>Check List</h5></div>
+      </div>
+    </div>
+    <div class="tm-status"><span id="tmRecord">Record 1/1</span><span id="tmNote"></span></div>
   </div>
 
   <!-- ============ MEDICINE ADMIN ENTRY POPUP ============ -->
@@ -3053,6 +3273,200 @@
     });
   }
 
+
+  /* Blood Transfusion Monitoring popup */
+  function tmMk(o){
+    return Object.assign({unit:'',prod:'',abo:'',rh:'',volume:'',expiry:'',premid:'',temp:'',pulse:'',resp:'',sys:'',dia:'',
+      startedBy:'',stoppedBy:'',checkedBy:'',location:'',remarks:'',suspended:false,suspReason:'',reactionSusp:false,nurse:'',
+      flows:[],monitors:[],reactions:['','',''],checks:[false,false,false,false,false,false,false]}, o);
+  }
+  const tmChecked6 = [true,true,true,true,true,true,false];
+  const tmData = [
+    tmMk({unit:'N350126332035', prod:'RED BLOOD CELLS SAGM.', abo:'A', rh:'Positive', volume:'400', expiry:'12/10/2026 00:00',
+      premid:'RED BLOOD CELLS SAGM.\nUnits required is 1', temp:'37', pulse:'99', resp:'28', sys:'101', dia:'65',
+      startedBy:'CHINJU JOSSY', checkedBy:'FATHALRAHMAN ABDULGADIR MOHAMED', location:'MALE MEDICAL WARD', checks:tmChecked6.slice(),
+      flows:[{s:'28/09/2026 13:30', e:'28/09/2026 18:50', r:'75', v:'400'}],
+      monitors:[{d:'28/09/2026 13:30', t:'37', p:'98', r:'24', sy:'101', di:'65'}]}),
+    tmMk({unit:'N350125330446', prod:'RED BLOOD CELLS CPDA-1', abo:'A', rh:'Positive', volume:'350', expiry:'10/04/2025 00:00',
+      premid:'RED BLOOD CELLS CPDA-1\nUnits required is 1', temp:'37', pulse:'96', resp:'24', sys:'108', dia:'70',
+      startedBy:'CHINJU JOSSY', stoppedBy:'CHINJU JOSSY', checkedBy:'FATHALRAHMAN ABDULGADIR MOHAMED', location:'MALE MEDICAL WARD', checks:tmChecked6.slice(),
+      flows:[{s:'21/03/2025 16:36', e:'21/03/2025 19:36', r:'117', v:'350'}],
+      monitors:[{d:'21/03/2025 16:36', t:'37', p:'96', r:'24', sy:'108', di:'70'},{d:'21/03/2025 18:00', t:'37', p:'92', r:'22', sy:'112', di:'72'}]}),
+    tmMk({unit:'N350125330272', prod:'RED BLOOD CELLS CPDA-1', abo:'A', rh:'Positive', volume:'300', expiry:'01/04/2025 00:00',
+      premid:'RED BLOOD CELLS CPDA-1\nUnits required is 1', temp:'36.8', pulse:'90', resp:'22', sys:'115', dia:'74',
+      startedBy:'CHINJU JOSSY', stoppedBy:'CHINJU JOSSY', checkedBy:'FATHALRAHMAN ABDULGADIR MOHAMED', location:'MALE MEDICAL WARD', checks:tmChecked6.slice(),
+      flows:[{s:'11/03/2025 12:00', e:'11/03/2025 13:00', r:'300', v:'300'}],
+      monitors:[{d:'11/03/2025 12:00', t:'36.8', p:'90', r:'22', sy:'115', di:'74'}]}),
+    tmMk({unit:'N350125330274', prod:'RED BLOOD CELLS CPDA-1', abo:'A', rh:'Positive', volume:'350', expiry:'25/03/2025 00:00',
+      premid:'RED BLOOD CELLS CPDA-1\nUnits required is 1', temp:'37.1', pulse:'88', resp:'20', sys:'120', dia:'76',
+      startedBy:'CHINJU JOSSY', stoppedBy:'CHINJU JOSSY', checkedBy:'FATHALRAHMAN ABDULGADIR MOHAMED', location:'MALE MEDICAL WARD', checks:tmChecked6.slice(),
+      flows:[{s:'27/02/2025 10:22', e:'27/02/2025 14:22', r:'88', v:'350'}],
+      monitors:[{d:'27/02/2025 10:22', t:'37.1', p:'88', r:'20', sy:'120', di:'76'}]})
+  ];
+  const tmCheckNames = ['Receiving Date','Patient Name','Patient Number','Patient ID Band','Type Component','Blood Type','Donor Number'];
+  const tmState = { sel: tmData[0], built: false };
+
+  function tmMsg(t){ document.getElementById('tmNote').textContent = t; }
+  function tmNum(v){ const n = parseFloat(v); return isNaN(n) ? 0 : n; }
+
+  function tmRenderList(){
+    const wrap = document.getElementById('tmList');
+    wrap.innerHTML = '';
+    tmData.forEach(r => {
+      const f = r.flows[0], l = r.flows[r.flows.length - 1];
+      const row = document.createElement('div');
+      row.className = 'tm-grid tm-tr' + (r === tmState.sel ? ' sel' : '') + (r.suspended ? ' susp' : '');
+      row.style.gridTemplateColumns = '1.1fr 1.6fr .8fr 1fr 1fr';
+      const cell = t => { const d = document.createElement('div'); d.textContent = t; return d; };
+      row.appendChild(cell(r.unit));
+      row.appendChild(cell(r.prod));
+      row.appendChild(cell((r.abo + ' ' + r.rh).trim()));
+      row.appendChild(cell(f ? f.s : ''));
+      row.appendChild(cell(l ? l.e : ''));
+      row.addEventListener('click', () => { tmState.sel = r; tmRenderAll(); });
+      wrap.appendChild(row);
+    });
+    document.getElementById('tmRecord').textContent = 'Record ' + (tmData.indexOf(tmState.sel) + 1) + '/' + tmData.length;
+  }
+
+  function tmTotals(){
+    const r = tmState.sel;
+    let total = 0;
+    r.flows.forEach(f => { total += tmNum(f.v); });
+    document.getElementById('tmTotal').textContent = total;
+    document.getElementById('tmBalance').textContent = Math.max(0, tmNum(r.volume) - total);
+  }
+
+  function tmRenderTable(kind){
+    const r = tmState.sel;
+    const cfg = {
+      flows: {id:'tmFlows', keys:['s','e','r','v'], cols:'1.2fr 1.2fr .8fr 1fr 44px'},
+      monitors: {id:'tmMonitors', keys:['d','t','p','r','sy','di'], cols:'1.5fr .7fr .7fr .7fr .7fr .7fr 44px'}
+    }[kind];
+    const wrap = document.getElementById(cfg.id);
+    wrap.innerHTML = '';
+    r[kind].forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'tm-row';
+      row.style.gridTemplateColumns = cfg.cols;
+      cfg.keys.forEach(k => {
+        const inp = document.createElement('input');
+        inp.type = 'text'; inp.value = item[k] || '';
+        inp.addEventListener('input', () => { item[k] = inp.value; if(kind === 'flows'){ tmTotals(); tmRenderList(); } });
+        row.appendChild(inp);
+      });
+      row.appendChild(document.createElement('div'));
+      wrap.appendChild(row);
+    });
+  }
+
+  function tmRenderReactions(){
+    const r = tmState.sel;
+    const wrap = document.getElementById('tmReactions');
+    wrap.innerHTML = '';
+    r.reactions.forEach((t, i) => {
+      const row = document.createElement('div');
+      row.className = 'tm-row';
+      row.style.gridTemplateColumns = '1fr';
+      const inp = document.createElement('input');
+      inp.type = 'text'; inp.value = t;
+      inp.addEventListener('input', () => { r.reactions[i] = inp.value; });
+      row.appendChild(inp);
+      wrap.appendChild(row);
+    });
+  }
+
+  function tmAdd(kind){
+    const r = tmState.sel;
+    r[kind].push(kind === 'flows' ? {s:'',e:'',r:'',v:''} : {d:'',t:'',p:'',r:'',sy:'',di:''});
+    tmRenderTable(kind);
+    if(kind === 'flows') tmRenderList();
+  }
+  function tmRemove(kind){
+    tmState.sel[kind].pop();
+    tmRenderTable(kind);
+    if(kind === 'flows'){ tmTotals(); tmRenderList(); }
+  }
+  function tmClearReactions(){ tmState.sel.reactions = ['','','']; tmRenderReactions(); }
+
+  function tmFill(){
+    const r = tmState.sel;
+    document.querySelectorAll('#tmModal [data-tm]').forEach(el => {
+      const v = r[el.dataset.tm];
+      if(el.type === 'checkbox') el.checked = !!v; else el.value = v || '';
+    });
+    document.querySelectorAll('#tmChecks input').forEach((el, i) => { el.checked = !!r.checks[i]; });
+  }
+
+  function tmRenderAll(){
+    tmRenderList();
+    tmFill();
+    tmRenderTable('flows');
+    tmRenderTable('monitors');
+    tmRenderReactions();
+    tmTotals();
+  }
+
+  function tmCreate(){
+    const r = tmMk({location:'MALE MEDICAL WARD'});
+    tmData.unshift(r);
+    tmState.sel = r;
+    tmRenderAll();
+    tmMsg('New transfusion created — fill in the unit details.');
+  }
+
+  function tmClear(){
+    const r = tmState.sel;
+    const blank = tmMk({});
+    Object.keys(blank).forEach(k => { r[k] = blank[k]; });
+    tmRenderAll();
+    tmMsg('Cleared');
+  }
+
+  function openTransfusionMonitoring(){
+    if(!tmState.built){
+      document.querySelectorAll('#tmModal [data-tm]').forEach(el => {
+        el.addEventListener('input', () => {
+          const v = el.type === 'checkbox' ? el.checked : el.value;
+          tmState.sel[el.dataset.tm] = v;
+          if(el.dataset.tm === 'volume') tmTotals();
+          tmRenderList();
+        });
+        if(el.type === 'checkbox') el.addEventListener('change', () => { tmState.sel[el.dataset.tm] = el.checked; tmRenderList(); });
+      });
+      const checks = document.getElementById('tmChecks');
+      tmCheckNames.forEach((n, i) => {
+        const l = document.createElement('label');
+        l.innerHTML = '<span>' + n + '</span><input type="checkbox">';
+        l.querySelector('input').addEventListener('change', e => { tmState.sel.checks[i] = e.target.checked; });
+        checks.appendChild(l);
+      });
+      tmState.built = true;
+    }
+    const line = document.getElementById('pfGenderLine');
+    if(line){
+      document.getElementById('tmPatientLine').value = 'Patient Name, ' + line.textContent.replace(/\u00A0/g, ' ').replace(/Year\(s\)/, 'Year(s)(Dob:01/01/1949),');
+    }
+    tmState.sel = tmData[0];
+    tmRenderAll();
+    tmMsg('');
+    document.getElementById('tmModal').classList.add('open');
+  }
+  function closeTransfusionMonitoring(){
+    document.getElementById('tmModal').classList.remove('open');
+  }
+
+  function selectLabItem(name){
+    document.getElementById('labDropdown').classList.remove('open');
+    if(name === 'Lab Request'){
+      openLabView();
+    } else if(name === 'Transfusion Monitoring'){
+      openTransfusionMonitoring();
+    } else {
+      activateView('view-placeholder', name);
+    }
+  }
+
   function openLabView(){
     renderLabTests();
     selectLabTest(0);
@@ -3429,9 +3843,123 @@
     if(name === 'Imaging Request'){
       renderImaging();
       activateView('view-imaging');
+    } else if(name === 'Nursing Procedures'){
+      renderNursingProcRows();
+      activateView('view-nursingproc');
     } else {
       activateView('view-placeholder', name);
     }
+  }
+
+
+  /* Tubes / IV Lines popup */
+  function tbRow(o){ return Object.assign({tube:'', size:'', site:'', ins:'', rem:'', remarks:'', removed:false}, o); }
+  const tbData = [
+    tbRow({tube:'NGT', size:'16', ins:'03/10/2026 21:03', remarks:'reinserted'}),
+    tbRow({tube:'Peripheral Line', size:'20', site:'Site 1', ins:'30/09/2026 01:38', remarks:'left leg'}),
+    tbRow({tube:"FOLY'S CATHETER", size:'16', ins:'21/09/2026 23:19', remarks:'inserted on 19/09/26'}),
+    tbRow({tube:'Peripheral Line', size:'20', site:'Site-1', ins:'20/09/2026 07:13', remarks:'lt. hand', removed:true}),
+    tbRow({tube:'NGT', size:'16', ins:'18/09/2026 14:11', remarks:'unknown', removed:true}),
+    tbRow({tube:'Peripheral Line', size:'20', ins:'18/09/2026 14:11', removed:true})
+  ];
+  const tbState = { sel: tbData[1], day: '', built: false };
+  const tbFields = ['tube','size','site','ins','rem','remarks'];
+
+  function tbMsg(t){ document.getElementById('tbNote').textContent = t; }
+  function tbIsBlank(r){ return !(r.tube || r.size || r.site || r.ins || r.rem || r.remarks); }
+  function tbNow(){ const d = new Date(); return pad(d.getDate())+'/'+pad(d.getMonth()+1)+'/'+d.getFullYear()+' '+pad(d.getHours())+':'+pad(d.getMinutes()); }
+
+  function tbTrailingBlanks(){
+    let n = 0;
+    for(let i = tbData.length - 1; i >= 0 && tbIsBlank(tbData[i]); i--) n++;
+    return n;
+  }
+
+  function tbRefreshDays(){
+    const sel = document.getElementById('tbDay');
+    const days = [];
+    tbData.forEach(r => { const d = (r.ins || '').slice(0, 10); if(d && days.indexOf(d) === -1) days.push(d); });
+    sel.innerHTML = '<option value=""></option>' + days.map(d => '<option>' + d + '</option>').join('');
+    sel.value = days.indexOf(tbState.day) === -1 ? '' : tbState.day;
+    tbState.day = sel.value;
+  }
+
+  function tbMakeRow(r){
+    const row = document.createElement('div');
+    row.className = 'tb-cols tb-row' + (r.removed ? ' removed' : '') + (r === tbState.sel ? ' sel' : '');
+    tbFields.forEach(k => {
+      const inp = document.createElement('input');
+      inp.type = 'text'; inp.value = r[k];
+      if(k === 'tube') inp.setAttribute('list', 'tbTubeList');
+      inp.addEventListener('input', () => {
+        r[k] = inp.value;
+        if(k === 'rem'){ r.removed = inp.value.trim() !== ''; row.classList.toggle('removed', r.removed); }
+        if(k === 'ins') tbRefreshDays();
+        if(tbTrailingBlanks() < 3){
+          const b = tbRow({});
+          tbData.push(b);
+          document.getElementById('tbRows').appendChild(tbMakeRow(b));
+        }
+      });
+      row.appendChild(inp);
+    });
+    row.appendChild(document.createElement('div'));
+    row.addEventListener('focusin', () => {
+      tbState.sel = r;
+      document.querySelectorAll('#tbRows .tb-row').forEach(el => el.classList.remove('sel'));
+      row.classList.add('sel');
+    });
+    return row;
+  }
+
+  function tbRender(){
+    while(tbTrailingBlanks() < 3 || tbData.length < 11){ tbData.push(tbRow({})); }
+    tbRefreshDays();
+    const wrap = document.getElementById('tbRows');
+    wrap.innerHTML = '';
+    tbData.forEach(r => {
+      if(tbState.day && !tbIsBlank(r) && (r.ins || '').slice(0, 10) !== tbState.day) return;
+      wrap.appendChild(tbMakeRow(r));
+    });
+  }
+
+  function tbAdd(){
+    const r = tbRow({ins: tbNow()});
+    tbData.unshift(r);
+    tbState.sel = r;
+    tbState.day = '';
+    tbRender();
+    const first = document.querySelector('#tbRows .tb-row input');
+    if(first) first.focus();
+    tbMsg('New line added — pick the tube/line type.');
+  }
+
+  function tbToggleRemoved(){
+    const r = tbState.sel;
+    if(!r || tbIsBlank(r)){ tbMsg('Select a line first.'); return; }
+    if(r.removed){ r.removed = false; r.rem = ''; tbMsg('Line marked as not removed.'); }
+    else { r.removed = true; r.rem = tbNow(); tbMsg('Line marked as removed.'); }
+    tbRender();
+  }
+
+  function openTubesLines(){
+    if(!tbState.built){
+      document.getElementById('tbDay').addEventListener('change', e => { tbState.day = e.target.value; tbRender(); });
+      tbState.built = true;
+    }
+    const line = document.getElementById('pfGenderLine');
+    let txt = 'Patient Name';
+    if(line){
+      const m = line.textContent.replace(/\u00A0/g, ' ').match(/^(\w+)\s+(\d+)\s+Year/);
+      if(m) txt = 'Patient Name, ' + m[1] + ', ' + m[2] + ' Year(S)(Dob:01/01/' + (new Date().getFullYear() - Number(m[2])) + '), Omani';
+    }
+    document.getElementById('tbPatientLine').textContent = txt;
+    tbMsg('');
+    tbRender();
+    document.getElementById('tbModal').classList.add('open');
+  }
+  function closeTubesLines(){
+    document.getElementById('tbModal').classList.remove('open');
   }
 
   function selectReadingsItem(name){
@@ -3442,6 +3970,8 @@
     } else if(name === 'Intake-Output'){
       renderIO();
       activateView('view-io');
+    } else if(name === 'Tubes IV Lines'){
+      openTubesLines();
     } else if(name === 'Diabetic Chart'){
       openDiabeticChart();
     } else {
